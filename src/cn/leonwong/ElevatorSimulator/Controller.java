@@ -103,7 +103,9 @@ public class Controller extends Thread {
         if (this.strategy == DispatchingStrategy.SpeedFirst){
             ArrayList<Integer> waitingTime = new ArrayList<>();
             for (Elevator e : this.building.elevatorList){
-                if (e.getDirection() * (to - from) >= 0)
+                if (e.isFull())
+                    waitingTime.add(Integer.MAX_VALUE);
+                else if (e.getDirection() * (to - from) >= 0)
                     waitingTime.add(Math.abs(from - e.getLevel()));
                 else {
                     if (e.getDirection() == Elevator.Direction.Upward)
@@ -122,7 +124,9 @@ public class Controller extends Thread {
         else if (this.strategy == DispatchingStrategy.LoadBalancing){
             ArrayList<Integer> waitingTime = new ArrayList<>();
             for (Elevator e : this.building.elevatorList){
-                if (e.getDirection() * (to - from) >= 0)
+                if (e.isFull())
+                    waitingTime.add(Integer.MAX_VALUE);
+                else if (e.getDirection() * (to - from) >= 0)
                     waitingTime.add(Math.abs(from - e.getLevel()) + e.getPassengers());
                 else {
                     if (e.getDirection() == Elevator.Direction.Upward)
@@ -141,7 +145,9 @@ public class Controller extends Thread {
         else if (this.strategy == DispatchingStrategy.PowerSaving){
             ArrayList<Integer> waitingTime = new ArrayList<>();
             for (Elevator e : this.building.elevatorList){
-                if (e.isIdle()){
+                if (e.isFull())
+                    waitingTime.add(Integer.MAX_VALUE);
+                else if (e.isIdle()){
                     waitingTime.add(Integer.MAX_VALUE);
                 }
                 else if (e.getDirection() * (to - from) >= 0)
@@ -160,5 +166,9 @@ public class Controller extends Thread {
             }
             this.building.elevatorList.get(fastestIndex).addDestination(from);
         }
+    }
+
+    public void setStrategy(int str){
+        this.strategy = str;
     }
 }

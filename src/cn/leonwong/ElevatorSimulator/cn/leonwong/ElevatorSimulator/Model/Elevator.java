@@ -71,6 +71,7 @@ public class Elevator extends Thread {
             catch (InterruptedException e){
                 System.out.println("Interrupted: " + this.index);
             }
+            this.decideDestinations();
             // if this elevator is idle...
             if (this.isIdle()){
                 // just do nothing and go on...
@@ -106,7 +107,7 @@ public class Elevator extends Thread {
                     ArrayList<Passenger> gettingOn = new ArrayList<>();
                     for (Passenger pass : this.levelList.get(this.level)) {
                         // if the passenger has the SAME direction as the elevator...
-                        if ((pass.destination - this.level) * this.direction >= 0)
+                        if ((pass.destination - this.level) * this.direction >= 0 || this.isIdle())
                             // this passenger gets on this elevator
                             gettingOn.add(pass);
                     }
@@ -251,4 +252,11 @@ public class Elevator extends Thread {
     public int getPassengers(){
         return this.passengerList.size();
     }
+
+    private void decideDestinations(){
+        for (Passenger pass : this.passengerList)
+            this.destinations.add(pass.destination);
+    }
+
+
 }

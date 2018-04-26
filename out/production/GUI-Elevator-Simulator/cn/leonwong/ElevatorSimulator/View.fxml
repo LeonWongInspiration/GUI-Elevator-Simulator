@@ -22,7 +22,7 @@
                   <ChoiceBox fx:id="startingLevelChoiceBox" layoutX="137.0" layoutY="303.0" prefWidth="150.0" />
                   <ChoiceBox fx:id="destLevelChoiceBox" layoutX="137.0" layoutY="354.0" prefWidth="150.0" />
                   <Button fx:id="addPassengerButton" layoutX="174.0" layoutY="406.0" mnemonicParsing="false" onAction="#onClickAddPassengerButton" text="Add Passenger" />
-                  <ListView fx:id="strategyListView" layoutX="51.0" layoutY="515.0" prefHeight="200.0" prefWidth="200.0" />
+                  <ListView fx:id="strategyListView" layoutX="51.0" layoutY="515.0" onMouseClicked="#onChangingStrategyList" prefHeight="200.0" prefWidth="200.0" />
                   <Separator layoutY="240.0" prefHeight="7.0" prefWidth="315.0" />
                   <Label layoutX="15.0" layoutY="14.0" text="Create a New Building">
                      <font>
@@ -45,6 +45,11 @@
                      </font>
                   </Label>
                   <Button fx:id="strategyHelpButton" layoutX="191.0" layoutY="728.0" mnemonicParsing="false" onAction="#onClickStrategyHelpButton" text="What's this?" />
+                  <Button fx:id="testPassengerListButton" layoutX="16.0" layoutY="409.0" mnemonicParsing="false" onAction="#onClickTestPassengerListButton" text="Use Test-case Passengers">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />

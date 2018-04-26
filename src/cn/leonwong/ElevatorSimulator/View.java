@@ -13,6 +13,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class View extends Application {
     private Controller c;
@@ -59,6 +61,9 @@ public class View extends Application {
 
     @FXML
     private Button strategyHelpButton;
+
+    @FXML
+    private Button testPassengerListButton;
 
     @FXML
     private void onClickCreateBuildingButton(){
@@ -135,7 +140,7 @@ public class View extends Application {
 
     @FXML
     private void onClickStrategyHelpButton(){
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append("Help:\n\n");
         sb.append("Here are three strategies on controlling elevators:\n\n");
         sb.append("Speed First:\n\n");
@@ -148,5 +153,47 @@ public class View extends Application {
         strategyHelpMessage.setTitle("Dispatching Strategy: Help");
         strategyHelpMessage.setHeaderText("Help:");
         strategyHelpMessage.showAndWait();
+    }
+
+    @FXML
+    private void onClickTestPassengerListButton(){
+        System.out.println("View: Test-case passenger.");
+        if (!this.c.isBuildingCreated()){
+            Alert errorNullBuilding = new Alert(Alert.AlertType.INFORMATION, "Please create the building FIRST!");
+            errorNullBuilding.setTitle("Building not Created Error!");
+            errorNullBuilding.setHeaderText("Information");
+            errorNullBuilding.showAndWait();
+            System.out.println("View: Building not Created Error!");
+        }
+        else {
+            System.out.println("View: Test-case passengers added!");
+            Alert testCaseMessage = new Alert(Alert.AlertType.INFORMATION, "There will be a list of random passengers added to the building!");
+            testCaseMessage.setTitle("Test-case Starting!");
+            testCaseMessage.setHeaderText("Information");
+            testCaseMessage.showAndWait();
+            Random rd = new Random(System.currentTimeMillis());
+            ArrayList<Integer> randomNums = new ArrayList<>();
+            for (int i = 0; i < 10; ++i){
+                randomNums.add(Math.abs(rd.nextInt() % (this.c.getLevels() - 1)) + 1);
+            }
+            System.out.println("View: Added test-case passenger with random numbers:");
+            System.out.println(randomNums.toString());
+            for (int i = 2; i <= this.c.getLevels(); ++i){
+                for (int j = 0; j < 5; ++j){
+                    this.c.addPassenger(randomNums.get(j), i);
+                }
+                for (int j = 5; j < 10; ++j){
+                    this.c.addPassenger(i, randomNums.get(j));
+                }
+            }
+            //TODO: Add a list of passengers here!
+        }
+    }
+
+    @FXML
+    private void onChangingStrategyList(){
+        int strategy = this.strategyListView.getSelectionModel().getSelectedIndex();
+        this.c.setStrategy(strategy);
+        System.out.printf("View: Dispatching Strategy changed: %d\n", strategy);
     }
 }

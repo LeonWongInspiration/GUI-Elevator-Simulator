@@ -1,19 +1,27 @@
 package cn.leonwong.ElevatorSimulator;
 
 import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Building;
+import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Elevator;
 import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Message;
 import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Passenger;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class Controller extends Thread {
+    public static class DispatchingStrategy{
+        public static final int SpeedFirst = 0;
+        public static final int LoadBalancing = 1;
+        public static final int PowerSaving = 2;
+    }
+    private int strategy;
     private Vector<Message> messageCenter;
     private View view;
     private Thread t;
     private Building building;
 
     public Controller(){
-
+        this.strategy = DispatchingStrategy.SpeedFirst;
     }
 
     @Override
@@ -67,6 +75,7 @@ public class Controller extends Thread {
 
     public void addPassenger(int from, int to){
         this.building.levelList.get(from).add(new Passenger(to));
+        this.arrangeForElevator(from, to);
     }
 
     public void setBuilding(Building b){
@@ -88,5 +97,68 @@ public class Controller extends Thread {
 
     public int getElevators(){
         return this.building.getElevators();
+    }
+
+    private void arrangeForElevator(int from, int to){
+        if (this.strategy == DispatchingStrategy.SpeedFirst){
+            ArrayList<Integer> waitingTime = new ArrayList<>();
+            for (Elevator e : this.building.elevatorList){
+                if (e.getDirection() * (to - from) >= 0)
+                    waitingTime.add(Math.abs(from - e.getLevel()));
+                else {
+                    if (e.getDirection() == Elevator.Direction.Upward)
+                        waitingTime.add(e.getMaxDestination() * 2 - e.getLevel() - from + 2);
+                    else if (e.getDirection() == Elevator.Direction.Downward)
+                        waitingTime.add(e.getMinDestination() + from);
+                }
+            }
+            int fastestIndex = 0;
+            for (int i = 0; i < this.building.getElevators(); ++i){
+                if (waitingTime.get(i) < waitingTime.get(fastestIndex))
+                    fastestIndex = i;
+            }
+            this.building.elevatorList.get(fastestIndex).addDestination(from);
+        }
+        else if (this.strategy == DispatchingStrategy.LoadBalancing){
+            ArrayList<Integer> waitingTime = new ArrayList<>();
+            for (Elevator e : this.building.elevatorList){
+                if (e.getDirection() * (to - from) >= 0)
+                    waitingTime.add(Math.abs(from - e.getLevel()) + e.getPassengers());
+                else {
+                    if (e.getDirection() == Elevator.Direction.Upward)
+                        waitingTime.add(e.getMaxDestination() * 2 - e.getLevel() - from + 2 + e.getPassengers());
+                    else if (e.getDirection() == Elevator.Direction.Downward)
+                        waitingTime.add(e.getMinDestination() + from + e.getPassengers());
+                }
+            }
+            int fastestIndex = 0;
+            for (int i = 0; i < this.building.getElevators(); ++i){
+                if (waitingTime.get(i) < waitingTime.get(fastestIndex))
+                    fastestIndex = i;
+            }
+            this.building.elevatorList.get(fastestIndex).addDestination(from);
+        }
+        else if (this.strategy == DispatchingStrategy.PowerSaving){
+            ArrayList<Integer> waitingTime = new ArrayList<>();
+            for (Elevator e : this.building.elevatorList){
+                if (e.isIdle()){
+                    waitingTime.add(Integer.MAX_VALUE);
+                }
+                else if (e.getDirection() * (to - from) >= 0)
+                    waitingTime.add(Math.abs(from - e.getLevel()));
+                else {
+                    if (e.getDirection() == Elevator.Direction.Upward)
+                        waitingTime.add(e.getMaxDestination() * 2 - e.getLevel() - from + 2);
+                    else if (e.getDirection() == Elevator.Direction.Downward)
+                        waitingTime.add(e.getMinDestination() + from);
+                }
+            }
+            int fastestIndex = 0;
+            for (int i = 0; i < this.building.getElevators(); ++i){
+                if (waitingTime.get(i) < waitingTime.get(fastestIndex))
+                    fastestIndex = i;
+            }
+            this.building.elevatorList.get(fastestIndex).addDestination(from);
+        }
     }
 }

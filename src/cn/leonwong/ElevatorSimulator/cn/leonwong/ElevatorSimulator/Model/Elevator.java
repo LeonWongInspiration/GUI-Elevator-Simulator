@@ -17,7 +17,7 @@ public class Elevator extends Thread {
     /**
      * A class contains to directions in order to indicate direction
      */
-    private static final class Direction {
+    public static final class Direction {
         public static final int Upward = 1;
         public static final int changingDirection = 0;
         public static final int Downward = -1;
@@ -226,5 +226,29 @@ public class Elevator extends Thread {
         // Otherwise, change its direction
         this.nextDire = -this.direction;
         this.direction = Direction.changingDirection;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
+    public int getMaxDestination(){
+        int maxLev = 0;
+        for (Passenger p : this.passengerList)
+            if (p.destination > maxLev)
+                maxLev = p.destination;
+        return maxLev;
+    }
+
+    public int getMinDestination(){
+        int minLev = this.maxLevel;
+        for (Passenger p : this.passengerList)
+            if (p.destination < minLev)
+                minLev = p.destination;
+        return minLev;
+    }
+
+    public int getPassengers(){
+        return this.passengerList.size();
     }
 }

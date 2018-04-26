@@ -206,10 +206,18 @@ public class Elevator extends Thread {
     }
 
     private synchronized void decideDirection(){
-        // if the elevator has just changedd its direction...
+        // if the elevator has just changed its direction...
         if (this.direction == Direction.changingDirection){
             // use the direction decided just now
             this.direction = this.nextDire;
+            return;
+        }
+        if (this.level == this.maxLevel){
+            this.direction = Direction.Downward;
+            return;
+        }
+        if (this.level == 1){
+            this.direction = Direction.Upward;
             return;
         }
         // or if the elevator is still running towards the same direction...
@@ -217,12 +225,6 @@ public class Elevator extends Thread {
             // find if it is needed to go on towards the current direction
             if (this.destinations.contains(i))
                 return;
-        }
-        if (this.level == this.maxLevel){
-            this.direction = Direction.Downward;
-        }
-        if (this.level == 1){
-            this.direction = Direction.Upward;
         }
         // Otherwise, change its direction
         this.nextDire = -this.direction;
@@ -258,5 +260,7 @@ public class Elevator extends Thread {
             this.destinations.add(pass.destination);
     }
 
-
+    public void setLevel(int l){
+        this.level = l;
+    }
 }

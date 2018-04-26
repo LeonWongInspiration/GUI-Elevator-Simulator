@@ -6,6 +6,7 @@ import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Message
 import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Passenger;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Vector;
 
 public class Controller extends Thread {
@@ -118,6 +119,9 @@ public class Controller extends Thread {
             for (int i = 0; i < this.building.getElevators(); ++i){
                 if (waitingTime.get(i) < waitingTime.get(fastestIndex))
                     fastestIndex = i;
+                else if (waitingTime.get(i).equals(waitingTime.get(fastestIndex)))
+                    if (Math.abs(new Random(System.currentTimeMillis()).nextInt() % 100) >= 50)
+                        fastestIndex = i;
             }
             this.building.elevatorList.get(fastestIndex).addDestination(from);
         }
@@ -139,6 +143,9 @@ public class Controller extends Thread {
             for (int i = 0; i < this.building.getElevators(); ++i){
                 if (waitingTime.get(i) < waitingTime.get(fastestIndex))
                     fastestIndex = i;
+                else if (waitingTime.get(i).equals(waitingTime.get(fastestIndex)))
+                    if (Math.abs(new Random(System.currentTimeMillis()).nextInt() % 100) >= 50)
+                        fastestIndex = i;
             }
             this.building.elevatorList.get(fastestIndex).addDestination(from);
         }
@@ -163,6 +170,9 @@ public class Controller extends Thread {
             for (int i = 0; i < this.building.getElevators(); ++i){
                 if (waitingTime.get(i) < waitingTime.get(fastestIndex))
                     fastestIndex = i;
+                else if (waitingTime.get(i).equals(waitingTime.get(fastestIndex)))
+                    if (Math.abs(new Random(System.currentTimeMillis()).nextInt() % 100) >= 50)
+                        fastestIndex = i;
             }
             this.building.elevatorList.get(fastestIndex).addDestination(from);
         }
@@ -170,5 +180,10 @@ public class Controller extends Thread {
 
     public void setStrategy(int str){
         this.strategy = str;
+    }
+
+    public void randomizeElevators(){
+        for (Elevator e : this.building.elevatorList)
+            e.setLevel(Math.abs(new Random(System.currentTimeMillis()).nextInt() % (this.getLevels() - 1)) + 1);
     }
 }

@@ -101,6 +101,7 @@ public class View extends Application {
             }
             this.strategyListView.setItems(FXCollections.observableArrayList("Speed First", "Load Balancing", "Power Saving"));
         }
+        this.c.randomizeElevators();
         this.c.start();
     }
 
@@ -180,13 +181,14 @@ public class View extends Application {
             System.out.println(randomNums.toString());
             for (int i = 2; i <= this.c.getLevels(); ++i){
                 for (int j = 0; j < 5; ++j){
-                    this.c.addPassenger(randomNums.get(j), i);
+                    if (i != randomNums.get(j))
+                        this.c.addPassenger(randomNums.get(j), i);
                 }
                 for (int j = 5; j < 10; ++j){
-                    this.c.addPassenger(i, randomNums.get(j));
+                    if (i != randomNums.get(j))
+                        this.c.addPassenger(i, randomNums.get(j));
                 }
             }
-            //TODO: Add a list of passengers here!
         }
     }
 

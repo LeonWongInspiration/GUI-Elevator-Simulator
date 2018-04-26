@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java" afterDir="false" />
     </list>
@@ -70,10 +64,12 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+            <state relative-caret-position="78">
+              <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#967#968#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,16 +86,16 @@
         </entry>
       </file>
       <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Message.java">
+        <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Message.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
+              <caret column="74" selection-start-column="74" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Passenger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Passenger.java">
+        <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Passenger.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
@@ -110,9 +106,10 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="746">
-              <caret line="85" column="44" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
+            <state relative-caret-position="375">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#2222#2223#0" expanded="true" />
                 <element signature="e#2294#2295#0" expanded="true" />
                 <element signature="e#2298#2299#0" expanded="true" />
@@ -129,10 +126,10 @@
         </entry>
       </file>
       <file leaf-file-name="Elevator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Elevator.java">
+        <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
+              <caret column="74" selection-start-column="74" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -140,14 +137,14 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9030">
-              <caret line="602" column="12" selection-start-line="602" selection-start-column="12" selection-end-line="602" selection-end-column="12" />
+            <state relative-caret-position="9330">
+              <caret line="647" column="12" selection-start-line="647" selection-start-column="12" selection-end-line="647" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Building.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java">
+        <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
               <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
@@ -187,6 +184,8 @@
         <option value="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.fxml" />
         <option value="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java" />
         <option value="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Controller.java" />
+        <option value="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorController/ModelController/Controller.java" />
+        <option value="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/View/View.java" />
         <option value="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java" />
       </list>
     </option>
@@ -236,6 +235,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ElevatorSimulator" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GUI-Elevator-Simulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GUI-Elevator-Simulator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ElevatorSimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -258,6 +264,11 @@
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/View" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -392,12 +403,12 @@
       <workItem from="1524731991557" duration="2740000" />
       <workItem from="1524740261561" duration="39000" />
       <workItem from="1524740309497" duration="3280000" />
-      <workItem from="1524772786725" duration="3632000" />
+      <workItem from="1524772786725" duration="5030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11537000" />
+    <option name="totallyTimeSpent" value="12935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="32" y="54" width="2496" height="1300" extended-state="0" />
@@ -412,13 +423,14 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32871124" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32707992" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16746795" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.16746795" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32952693" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -428,7 +440,6 @@
       <window_info anchor="right" id="JetGradle" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Changes" order="7" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Profiler" order="7" />
@@ -458,7 +469,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Elevator.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
@@ -472,7 +483,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="38" />
@@ -492,18 +503,20 @@
           <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Passenger.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Passenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
@@ -515,6 +528,7 @@
         <state relative-caret-position="15">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#2222#2223#0" expanded="true" />
             <element signature="e#2294#2295#0" expanded="true" />
             <element signature="e#2298#2299#0" expanded="true" />
@@ -529,7 +543,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Elevator.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
@@ -543,7 +557,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="38" />
@@ -563,18 +577,20 @@
           <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Passenger.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Passenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
@@ -588,7 +604,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Elevator.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
@@ -602,7 +618,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="38" />
@@ -622,25 +638,27 @@
           <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Passenger.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Passenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Elevator.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
@@ -654,7 +672,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="38" />
@@ -681,25 +699,27 @@
           <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Passenger.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Passenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Elevator.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="38" selection-start-column="38" selection-end-column="38" />
@@ -713,7 +733,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="38" />
@@ -740,6 +760,8 @@
           <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -759,14 +781,14 @@
     <entry file="file://$PROJECT_DIR$/src/cn.leonwong.ElevatorSimulator/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/cn.leonwong.ElevatorSimulator/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/cn.leonwong.ElevatorSimulator/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
+          <caret column="74" selection-start-column="74" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Passenger.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Passenger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
@@ -782,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9030">
-          <caret line="602" column="12" selection-start-line="602" selection-start-column="12" selection-end-line="602" selection-end-column="12" />
+        <state relative-caret-position="9330">
+          <caret line="647" column="12" selection-start-line="647" selection-start-column="12" selection-end-line="647" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -795,7 +817,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Building.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
@@ -820,18 +842,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Elevator.java">
+    <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
+          <caret column="74" selection-start-column="74" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="85" column="44" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#2222#2223#0" expanded="true" />
             <element signature="e#2294#2295#0" expanded="true" />
             <element signature="e#2298#2299#0" expanded="true" />
@@ -848,10 +871,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+        <state relative-caret-position="78">
+          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
           </folding>
         </state>
       </provider>

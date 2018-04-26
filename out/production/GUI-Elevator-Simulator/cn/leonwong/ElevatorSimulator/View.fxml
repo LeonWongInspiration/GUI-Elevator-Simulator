@@ -44,6 +44,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Button fx:id="strategyHelpButton" layoutX="191.0" layoutY="728.0" mnemonicParsing="false" onAction="#onClickStrategyHelpButton" text="What's this?" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />

@@ -3,6 +3,8 @@ package cn.leonwong.ElevatorSimulator;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableListBase;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,11 +22,6 @@ public class View extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
         primaryStage.setTitle("Elevator Simulator - 1652795 王陆洋");
         primaryStage.setScene(new Scene(root, 1024, 768));
-
-
-
-
-
 
 
 
@@ -61,6 +58,9 @@ public class View extends Application {
     private ListView<String> strategyListView;
 
     @FXML
+    private Button strategyHelpButton;
+
+    @FXML
     private void onClickCreateBuildingButton(){
         System.out.println("View: Create a new building.");
         int levels = Integer.parseInt(this.numberOfLevelsText.getCharacters().toString());
@@ -94,6 +94,7 @@ public class View extends Application {
                 this.startingLevelChoiceBox.getItems().addAll(i);
                 this.destLevelChoiceBox.getItems().addAll(i);
             }
+            this.strategyListView.setItems(FXCollections.observableArrayList("Speed First", "Load Balancing", "Power Saving"));
         }
         this.c.start();
     }
@@ -130,5 +131,22 @@ public class View extends Application {
                 this.c.addPassenger(from, to);
             }
         }
+    }
+
+    @FXML
+    private void onClickStrategyHelpButton(){
+        StringBuffer sb = new StringBuffer();
+        sb.append("Help:\n\n");
+        sb.append("Here are three strategies on controlling elevators:\n\n");
+        sb.append("Speed First:\n\n");
+        sb.append("On Speed First mode, every passenger waiting for elevators can get on an elevator as fast as possible.\n\n\n");
+        sb.append("Load Balancing:\n\n");
+        sb.append("On Load Balancing mode, when a passenger comes, the system will consider both the waiting time of the passenger and the current load of each elevator.\n\n\n");
+        sb.append("Power Saving:\n\n");
+        sb.append("On Power Saving mode, the system will try to make as less elevators running as possible (but not making only one elevator running).");
+        Alert strategyHelpMessage = new Alert(Alert.AlertType.INFORMATION, sb.toString());
+        strategyHelpMessage.setTitle("Dispatching Strategy: Help");
+        strategyHelpMessage.setHeaderText("Help:");
+        strategyHelpMessage.showAndWait();
     }
 }

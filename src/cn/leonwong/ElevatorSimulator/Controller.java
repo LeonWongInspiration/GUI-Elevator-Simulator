@@ -1,15 +1,16 @@
 package cn.leonwong.ElevatorSimulator;
 
+import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Building;
+import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Message;
+import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Passenger;
+
 import java.util.Vector;
 
 public class Controller extends Thread {
     private Vector<Message> messageCenter;
     private View view;
     private Thread t;
-    public Controller(Vector<Message> mc, View v){
-        this.messageCenter = mc;
-        this.view = v;
-    }
+    private Building building;
 
     public Controller(){
 
@@ -26,6 +27,16 @@ public class Controller extends Thread {
     @Override
     public void run(){
         while (true){
+            if (this.messageCenter == null){
+                try {
+                    Thread.sleep(500);
+                }
+                catch (InterruptedException e){
+                    System.out.println("Message Center is NULL !! And sleep INTERRUPTED!!");
+                }
+                System.out.println("Message Center not initialized!");
+                continue;
+            }
             while (!this.messageCenter.isEmpty()){
                 Message tmp = this.messageCenter.firstElement();
                 if (tmp != null) {
@@ -44,5 +55,38 @@ public class Controller extends Thread {
 
             }
         }
+    }
+
+    public void setMessageCenter(Vector<Message> mc){
+        this.messageCenter = mc;
+    }
+
+    public void setView(View v){
+        this.view = v;
+    }
+
+    public void addPassenger(int from, int to){
+        this.building.levelList.get(from).add(new Passenger(to));
+    }
+
+    public void setBuilding(Building b){
+        this.building = b;
+    }
+
+    public void createBuilding(int levs, int elevs, int cap){
+        this.building = new Building(levs, elevs, cap);
+        this.messageCenter = this.building.messageCenter;
+    }
+
+    public boolean isBuildingCreated(){
+        return this.building != null;
+    }
+
+    public int getLevels(){
+        return this.building.getLevels();
+    }
+
+    public int getElevators(){
+        return this.building.getElevators();
     }
 }

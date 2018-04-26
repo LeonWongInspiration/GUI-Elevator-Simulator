@@ -1,4 +1,4 @@
-package cn.leonwong.ElevatorSimulator;
+package cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model;
 
 import java.util.ArrayList;
 import java.util.Vector;

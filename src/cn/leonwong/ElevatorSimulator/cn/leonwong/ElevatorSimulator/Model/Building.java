@@ -1,4 +1,4 @@
-package cn.leonwong.ElevatorSimulator;
+package cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model;
 
 import java.util.Vector;
 import java.util.concurrent.locks.ReentrantLock;
@@ -16,7 +16,7 @@ public class Building {
     /// Note for each elevator in this building
     public Vector<Elevator> elevatorList;
     /// Note for persons waiting for elevators in each level
-    private Vector< Vector<Passenger> > levelList;
+    public Vector< Vector<Passenger> > levelList;
     /// A message center noting for events;
     public Vector<Message> messageCenter;
     /// A lock used to help lock levelList
@@ -53,5 +53,13 @@ public class Building {
             this.levelList.get(lev).add(pass);
             return true;
         }
+    }
+
+    public int getElevators() {
+        return elevators;
+    }
+
+    public int getLevels() {
+        return levels;
     }
 }

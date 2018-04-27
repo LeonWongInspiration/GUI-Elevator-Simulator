@@ -23,6 +23,7 @@ public class Controller extends Thread {
 
     public Controller(){
         this.strategy = DispatchingStrategy.SpeedFirst;
+        this.stop = false;
     }
 
     @Override
@@ -35,7 +36,7 @@ public class Controller extends Thread {
 
     @Override
     public void run(){
-        while (true){
+        while (!this.stop){
             if (this.messageCenter == null){
                 try {
                     Thread.sleep(500);
@@ -185,5 +186,13 @@ public class Controller extends Thread {
     public void randomizeElevators(){
         for (Elevator e : this.building.elevatorList)
             e.setLevel(Math.abs(new Random(System.currentTimeMillis()).nextInt() % (this.getLevels() - 1)) + 1);
+    }
+
+    private boolean stop;
+
+    public void stopThread(){
+        for (Elevator e : this.building.elevatorList)
+            e.stopThread();
+        this.stop = true;
     }
 }

@@ -5,34 +5,75 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableListBase;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class View extends Application {
     private Controller c;
+    private ArrayList<Button> GUIElevators;
+
+    private class ExitHandler implements EventHandler<WindowEvent> {
+        private View view;
+
+        public ExitHandler(View v){
+            System.out.println("View: Exit Handler Created");
+            this.view = v;
+        }
+
+        @Override
+        public void handle(WindowEvent e){
+            e.consume();
+            System.out.println("View: Exit Triggered");
+            this.view.stopThread();
+        }
+    }
+
+    public void stopThread(){
+        if (this.c != null)
+            this.c.stopThread();
+        System.exit(0);
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
         primaryStage.setTitle("Elevator Simulator - 1652795 王陆洋");
         primaryStage.setScene(new Scene(root, 1024, 768));
-
-
-
+        primaryStage.setOnCloseRequest(new ExitHandler(this));
         primaryStage.show();
+//        Runtime.getRuntime().addShutdownHook(new ExitHandler(this));
     }
-
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void initGUIElevators(int elevs){
+        Button tryButton = new Button("Try");
+        buildingCanvas.getChildren().add(tryButton);
+
+        Line pixel600Line = new Line();
+        pixel600Line.setStartX(700);
+        pixel600Line.setEndX(700);
+        pixel600Line.setStartY(0);
+        pixel600Line.setEndY(768);
+
+        buildingCanvas.getChildren().add(pixel600Line);
     }
 
     @FXML
@@ -64,6 +105,9 @@ public class View extends Application {
 
     @FXML
     private Button testPassengerListButton;
+
+    @FXML
+    private AnchorPane buildingCanvas;
 
     @FXML
     private void onClickCreateBuildingButton(){
@@ -102,6 +146,7 @@ public class View extends Application {
             this.strategyListView.setItems(FXCollections.observableArrayList("Speed First", "Load Balancing", "Power Saving"));
         }
         this.c.randomizeElevators();
+        this.initGUIElevators(0);
         this.c.start();
     }
 

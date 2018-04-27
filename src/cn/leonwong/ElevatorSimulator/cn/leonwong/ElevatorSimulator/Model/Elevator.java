@@ -63,8 +63,8 @@ public class Elevator extends Thread {
      * Run function
      */
     @Override
-    public synchronized void run(){
-        while (true){
+    public void run(){
+        while (!this.stop){
             try {
                 Thread.sleep(FLOOR_INTERVAL);
             }
@@ -141,6 +141,7 @@ public class Elevator extends Thread {
         this.passengerList = new Vector<>();
         this.destinations = new TreeSet<>();
         this.nextDire = Direction.Upward;
+        this.stop = false;
     }
 
     private synchronized boolean passengerEnterElevetor(int lev, Passenger pass){
@@ -262,5 +263,11 @@ public class Elevator extends Thread {
 
     public void setLevel(int l){
         this.level = l;
+    }
+
+    private boolean stop;
+
+    public void stopThread(){
+        this.stop = true;
     }
 }

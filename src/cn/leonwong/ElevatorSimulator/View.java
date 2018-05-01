@@ -518,11 +518,11 @@ public class View extends Application {
             System.out.println("View: Added test-case passenger with random numbers:");
             System.out.println(randomNums.toString());
             for (int i = 2; i <= this.c.getLevels(); ++i){
-                for (int j = 0; j < 5; ++j){
+                for (int j = 0; j < (i < 5 ? i : 5); ++j){
                     if (i != randomNums.get(j))
                         this.c.addPassenger(randomNums.get(j), i);
                 }
-                for (int j = 5; j < 10; ++j){
+                for (int j = 5; j < (i + 5 < 10 ? i + 5 : 10); ++j){
                     if (i != randomNums.get(j))
                         this.c.addPassenger(i, randomNums.get(j));
                 }

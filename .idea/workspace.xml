@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/ElevatorIcon_60_60.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI-Elevator-Simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GUI-Elevator-Simulator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/View$ExitHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/View$ExitHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator$Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GUI-Elevator-Simulator/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Passenger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Building.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Elevator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/cn/leonwong/ElevatorSimulator/Model/Passenger.java" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,8 +63,8 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="794">
-              <caret line="401" column="46" selection-start-line="401" selection-start-column="46" selection-end-line="401" selection-end-column="46" />
+            <state relative-caret-position="924">
+              <caret line="524" column="61" selection-start-line="524" selection-start-column="61" selection-end-line="524" selection-end-column="61" />
               <folding>
                 <element signature="class#ExitHandler#0;class#View#0" />
                 <element signature="class#ElevatorButtonOnClickHandler#0;class#View#0" />
@@ -99,7 +81,6 @@
                 <element signature="method#onClickCreateBuildingButton#0;class#View#0" />
                 <element signature="method#onClickAddPassengerButton#0;class#View#0" />
                 <element signature="method#onClickStrategyHelpButton#0;class#View#0" />
-                <element signature="method#onClickTestPassengerListButton#0;class#View#0" />
                 <element signature="method#onChangingStrategyList#0;class#View#0" />
               </folding>
             </state>
@@ -470,16 +451,15 @@
       <workItem from="1524786027697" duration="3309000" />
       <workItem from="1524789571391" duration="3725000" />
       <workItem from="1524894042181" duration="4909000" />
-      <workItem from="1525205344892" duration="3881000" />
+      <workItem from="1525205344892" duration="4424000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33915000" />
+    <option name="totallyTimeSpent" value="34458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="32" y="54" width="2496" height="1300" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -490,7 +470,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32381728" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32381728" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info id="Capture Tool" order="5" />
@@ -628,7 +608,6 @@
             <element signature="method#onClickCreateBuildingButton#0;class#View#0" />
             <element signature="method#onClickAddPassengerButton#0;class#View#0" />
             <element signature="method#onClickStrategyHelpButton#0;class#View#0" />
-            <element signature="method#onClickTestPassengerListButton#0;class#View#0" />
             <element signature="method#onChangingStrategyList#0;class#View#0" />
           </folding>
         </state>
@@ -699,7 +678,6 @@
             <element signature="method#onClickCreateBuildingButton#0;class#View#0" />
             <element signature="method#onClickAddPassengerButton#0;class#View#0" />
             <element signature="method#onClickStrategyHelpButton#0;class#View#0" />
-            <element signature="method#onClickTestPassengerListButton#0;class#View#0" />
             <element signature="method#onChangingStrategyList#0;class#View#0" />
           </folding>
         </state>
@@ -770,7 +748,6 @@
             <element signature="method#onClickCreateBuildingButton#0;class#View#0" />
             <element signature="method#onClickAddPassengerButton#0;class#View#0" />
             <element signature="method#onClickStrategyHelpButton#0;class#View#0" />
-            <element signature="method#onClickTestPassengerListButton#0;class#View#0" />
             <element signature="method#onChangingStrategyList#0;class#View#0" />
           </folding>
         </state>
@@ -841,7 +818,6 @@
             <element signature="method#onClickCreateBuildingButton#0;class#View#0" />
             <element signature="method#onClickAddPassengerButton#0;class#View#0" />
             <element signature="method#onClickStrategyHelpButton#0;class#View#0" />
-            <element signature="method#onClickTestPassengerListButton#0;class#View#0" />
             <element signature="method#onChangingStrategyList#0;class#View#0" />
           </folding>
         </state>
@@ -969,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/leonwong/ElevatorSimulator/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="794">
-          <caret line="401" column="46" selection-start-line="401" selection-start-column="46" selection-end-line="401" selection-end-column="46" />
+        <state relative-caret-position="924">
+          <caret line="524" column="61" selection-start-line="524" selection-start-column="61" selection-end-line="524" selection-end-column="61" />
           <folding>
             <element signature="class#ExitHandler#0;class#View#0" />
             <element signature="class#ElevatorButtonOnClickHandler#0;class#View#0" />
@@ -987,7 +963,6 @@
             <element signature="method#onClickCreateBuildingButton#0;class#View#0" />
             <element signature="method#onClickAddPassengerButton#0;class#View#0" />
             <element signature="method#onClickStrategyHelpButton#0;class#View#0" />
-            <element signature="method#onClickTestPassengerListButton#0;class#View#0" />
             <element signature="method#onChangingStrategyList#0;class#View#0" />
           </folding>
         </state>

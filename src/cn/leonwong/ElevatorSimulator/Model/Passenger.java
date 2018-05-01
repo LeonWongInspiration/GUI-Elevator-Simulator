@@ -1,4 +1,4 @@
-package cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model;
+package cn.leonwong.ElevatorSimulator.Model;
 
 public class Passenger {
     public int destination;
@@ -6,4 +6,5 @@ public class Passenger {
     public Passenger(int dest){
         this.destination = dest;
     }
+
 }

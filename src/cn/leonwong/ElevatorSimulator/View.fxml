@@ -45,7 +45,7 @@
                      </font>
                   </Label>
                   <Button fx:id="strategyHelpButton" layoutX="191.0" layoutY="728.0" mnemonicParsing="false" onAction="#onClickStrategyHelpButton" text="What's this?" />
-                  <Button fx:id="testPassengerListButton" layoutX="16.0" layoutY="409.0" mnemonicParsing="false" onAction="#onClickTestPassengerListButton" text="Use Test-case Passengers">
+                  <Button fx:id="testPassengerListButton" layoutX="16.0" layoutY="409.0" mnemonicParsing="false" onAction="#onClickTestPassengerListButton" text="Randomly Add Passengers">
                      <font>
                         <Font size="10.0" />
                      </font>

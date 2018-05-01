@@ -1,9 +1,9 @@
 package cn.leonwong.ElevatorSimulator;
 
-import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Building;
-import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Elevator;
-import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Message;
-import cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model.Passenger;
+import cn.leonwong.ElevatorSimulator.Model.Building;
+import cn.leonwong.ElevatorSimulator.Model.Elevator;
+import cn.leonwong.ElevatorSimulator.Model.Message;
+import cn.leonwong.ElevatorSimulator.Model.Passenger;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -54,8 +54,10 @@ public class Controller extends Thread {
                         System.out.printf("Controller: A passenger left elevator #%d at #%d floor.\n", tmp.destElevator, tmp.destLevel);
                     else if (tmp.mode == Message.passengerEnterElevator)
                         System.out.printf("Controller: A passenger heading for #%d floor entered elevator #%d.\n", tmp.destLevel, tmp.destElevator);
-                    else if (tmp.mode == Message.elevatorChangeFloor)
+                    else if (tmp.mode == Message.elevatorChangeFloor) {
                         System.out.printf("Controller: Elevator #%d goes to #%d floor.\n", tmp.destElevator, tmp.destLevel);
+                        this.view.moveElevator(tmp.destElevator, tmp.destLevel);
+                    }
                     else if (tmp.mode == Message.elevatorIsIdle)
                         System.out.printf("Controller: Elevator #%d is idle.\n", tmp.destElevator);
                     else
@@ -108,12 +110,12 @@ public class Controller extends Thread {
                 if (e.isFull())
                     waitingTime.add(Integer.MAX_VALUE);
                 else if (e.getDirection() * (to - from) >= 0)
-                    waitingTime.add(Math.abs(from - e.getLevel()));
+                    waitingTime.add(Math.abs(from - e.getLevel()) + e.getDestinationSize());
                 else {
                     if (e.getDirection() == Elevator.Direction.Upward)
-                        waitingTime.add(e.getMaxDestination() * 2 - e.getLevel() - from + 2);
+                        waitingTime.add(e.getMaxDestination() * 2 - e.getLevel() - from + 2 + e.getDestinationSize());
                     else if (e.getDirection() == Elevator.Direction.Downward)
-                        waitingTime.add(e.getMinDestination() + from);
+                        waitingTime.add(e.getMinDestination() + from + e.getDestinationSize());
                 }
             }
             int fastestIndex = 0;
@@ -194,5 +196,13 @@ public class Controller extends Thread {
         for (Elevator e : this.building.elevatorList)
             e.stopThread();
         this.stop = true;
+    }
+
+    public Vector<Elevator> getElevatorList(){
+        return this.building.elevatorList;
+    }
+
+    public Vector< Vector<Passenger> > getLevelList(){
+        return this.building.levelList;
     }
 }

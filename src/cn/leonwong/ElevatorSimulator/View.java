@@ -1,10 +1,10 @@
 package cn.leonwong.ElevatorSimulator;
 
+import cn.leonwong.ElevatorSimulator.Model.Elevator;
+import cn.leonwong.ElevatorSimulator.Model.Passenger;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
-import javafx.collections.ObservableListBase;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,20 +12,25 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Vector;
 
 public class View extends Application {
     private Controller c;
-    private ArrayList<Button> GUIElevators;
+    private ArrayList<Button> GUIElevatorButtons;
+    private ArrayList<Label> GUIElevatorLabels;
+    private ArrayList<Button> GUILevelButtons;
+    private Boolean isFirstPageShown;
 
     private class ExitHandler implements EventHandler<WindowEvent> {
         private View view;
@@ -40,6 +45,163 @@ public class View extends Application {
             e.consume();
             System.out.println("View: Exit Triggered");
             this.view.stopThread();
+        }
+    }
+
+    private class ElevatorButtonOnClickHandler implements EventHandler<javafx.event.ActionEvent> {
+        private int indexOfElevator;
+        private Elevator elevator;
+
+        public ElevatorButtonOnClickHandler(int index, Elevator elev){
+            this.indexOfElevator = index;
+            this.elevator = elev;
+        }
+
+        @Override
+        public void handle(javafx.event.ActionEvent event){
+            event.consume();
+            StringBuilder sb = new StringBuilder();
+            sb.append("This is the #");
+            sb.append(this.indexOfElevator + 1);
+            sb.append(" Elevator.\n");
+            if (this.elevator.isIdle()){
+                sb.append("This elevator is idle.");
+            }
+            else {
+                sb.append("There is(are) ");
+                sb.append(this.elevator.getPassengers());
+                sb.append(" passenger(s) in this elevator.\n");
+                sb.append("The destination level(s) of this elevator is(are):\n");
+                sb.append(this.elevator.getDestinations());
+            }
+            Alert elevatorInfo = new Alert(Alert.AlertType.INFORMATION, sb.toString());
+            elevatorInfo.setTitle("Elevator #" + (this.indexOfElevator+1));
+            elevatorInfo.setHeaderText("Elevator Information:");
+            elevatorInfo.showAndWait();
+        }
+    }
+
+    private class LevelButtonOnClickHandler implements EventHandler<javafx.event.ActionEvent>{
+        private int indexOfLevel;
+        private Vector<Passenger> level;
+
+        public LevelButtonOnClickHandler(int i, Vector<Passenger> vp){
+            this.indexOfLevel = i;
+            this.level = vp;
+        }
+
+        @Override
+        public void handle(javafx.event.ActionEvent event){
+            event.consume();
+            StringBuilder sb = new StringBuilder();
+            sb.append("This is the #");
+            sb.append(this.indexOfLevel + 1);
+            sb.append(" Level.\n");
+            if (this.level.isEmpty()){
+                sb.append("This level is empty.");
+            }
+            else {
+                sb.append("There are ");
+                sb.append(this.level.size());
+                sb.append(" Passengers waiting at the level.");
+                sb.append("And they are heading for (sorted by the order of time):\n");
+                sb.append(this.parseString(this.level));
+            }
+            sb.append("The level indicator is:\n");
+            sb.append(this.decideUpwardIndicator());
+            sb.append('\n');
+            sb.append(this.decideDownwardIndicator());
+            Alert levelAlert = new Alert(Alert.AlertType.INFORMATION, sb.toString());
+            levelAlert.setTitle("Level #" + this.indexOfLevel + 1);
+            levelAlert.setHeaderText("Information");
+            levelAlert.showAndWait();
+        }
+
+        private String parseString(Vector<Passenger> lev){
+            ArrayList<Integer> ai = new ArrayList<>();
+            for (Passenger pass : lev){
+                ai.add(pass.destination);
+            }
+            return ai.toString();
+        }
+
+        private char decideUpwardIndicator(){
+            for (Passenger pass : this.level){
+                if (pass.destination > this.indexOfLevel + 1)
+                return '▲';
+            }
+            return '△';
+        }
+
+        private char decideDownwardIndicator(){
+            for (Passenger pass : this.level){
+                if (pass.destination < this.indexOfLevel + 1)
+                    return '▼';
+            }
+            return '▽';
+        }
+    }
+
+    private class PageButtonOnClickHandler implements EventHandler<javafx.event.ActionEvent>{
+        private boolean pageUp;
+        private ArrayList<Button> levelButtons;
+        private ArrayList<Label> elevLables;
+        private Vector<Elevator> elevs;
+        private AnchorPane canvas;
+        View view;
+
+        public PageButtonOnClickHandler(boolean isPageUpButton, View v){
+            this.pageUp = isPageUpButton;
+            this.levelButtons = v.GUILevelButtons;
+            this.elevLables = v.GUIElevatorLabels;
+            this.elevs = v.c.getElevatorList();
+            this.canvas = v.buildingCanvas;
+            this.view = v;
+        }
+
+        @Override
+        public void handle(javafx.event.ActionEvent event){
+            event.consume();
+            if (this.pageUp){
+                this.view.setIsFirstPageShown(false);
+                for (int i = 0; i < 10; ++i){
+                    this.canvas.getChildren().remove(this.levelButtons.get(i));
+                }
+                for (int i = 10; i < this.levelButtons.size(); ++i){
+                    Button tmpBuildingButton = this.levelButtons.get(i);
+                    tmpBuildingButton.setLayoutX(10);
+                    tmpBuildingButton.setLayoutY(768 - (i - 10 + 1) * 60 + 10);
+                    this.canvas.getChildren().add(tmpBuildingButton);
+                }
+                for (int i = 0; i < elevs.size(); ++i){
+                    if (elevs.get(i).getLevel() > 10){
+                        this.view.showElevator(elevLables.get(i));
+                    }
+                    else {
+                        this.view.unshowElevator(elevLables.get(i));
+                    }
+                }
+            }
+            else {
+                this.view.setIsFirstPageShown(true);
+                for (int i = 10; i < this.levelButtons.size(); ++i) {
+                    this.canvas.getChildren().remove(this.levelButtons.get(i));
+                }
+                for (int i = 0; i < 10; ++i){
+                    Button tmpBuildingButton = this.levelButtons.get(i);
+                    tmpBuildingButton.setLayoutX(10);
+                    tmpBuildingButton.setLayoutY(768 - (i + 1) * 60 + 10);
+                    this.canvas.getChildren().add(tmpBuildingButton);
+                }
+                for (int i = 0; i < elevs.size(); ++i){
+                    if (elevs.get(i).getLevel() > 10){
+                        this.view.unshowElevator(elevLables.get(i));
+                    }
+                    else {
+                        this.view.showElevator(elevLables.get(i));
+                    }
+                }
+            }
         }
     }
 
@@ -64,16 +226,143 @@ public class View extends Application {
     }
 
     private void initGUIElevators(int elevs){
-        Button tryButton = new Button("Try");
-        buildingCanvas.getChildren().add(tryButton);
+        this.GUIElevatorButtons = new ArrayList<>();
+        this.GUIElevatorLabels = new ArrayList<>();
 
-        Line pixel600Line = new Line();
-        pixel600Line.setStartX(700);
-        pixel600Line.setEndX(700);
-        pixel600Line.setStartY(0);
-        pixel600Line.setEndY(768);
+        for (int i = 0; i < elevs; ++i){
+            Line tmpLine = new Line();
+            tmpLine.setStartX(700 - 60 * (elevs - i));
+            tmpLine.setEndX(700 - 60 * (elevs - i));
+            tmpLine.setStartY(0);
+            tmpLine.setEndY(768);
+            this.buildingCanvas.getChildren().add(tmpLine);
 
-        buildingCanvas.getChildren().add(pixel600Line);
+            Button tmpButton = new Button("#" + (i + 1));
+            tmpButton.setPrefSize(50, 40);
+            tmpButton.setLayoutX(700 - 60 * (elevs - i) - 25);
+            tmpButton.setLayoutY(0);
+            tmpButton.setOnAction(new ElevatorButtonOnClickHandler(i, this.c.getElevatorList().get(i)));
+            this.buildingCanvas.getChildren().add(tmpButton);
+            GUIElevatorButtons.add(tmpButton);
+
+            Image tmpLabelImage = new Image("ElevatorIcon_60_60.png");
+            Label tmpLabel = new Label(null, new ImageView(tmpLabelImage));
+            tmpLabel.setPrefSize(60, 60);
+            tmpLabel.setLayoutX(700 - 60 * (elevs - i) - 30);
+            tmpLabel.setLayoutY(768 - 60);
+            this.buildingCanvas.getChildren().add(tmpLabel);
+            GUIElevatorLabels.add(tmpLabel);
+
+        }
+    }
+
+    private void initGUILevels(int levs){
+        this.GUILevelButtons = new ArrayList<>();
+
+        for (int i = 0; i < 10; ++i){
+            Line tmpBuildingLine = new Line();
+            tmpBuildingLine.setStartX(0);
+            tmpBuildingLine.setEndX(700);
+            tmpBuildingLine.setStartY(768 - 60 * (i + 1));
+            tmpBuildingLine.setEndY(768 - 60 * (i + 1));
+            this.buildingCanvas.getChildren().add(tmpBuildingLine);
+        }
+        if (levs <= 10) {
+            for (int i = 0; i < levs; ++i) {
+                Button tmpBuildingButton = new Button("#" + (i + 1));
+                tmpBuildingButton.setPrefSize(60, 40);
+                tmpBuildingButton.setLayoutX(10);
+                tmpBuildingButton.setLayoutY(768 - (i + 1) * 60 + 10);
+                tmpBuildingButton.setOnAction(new LevelButtonOnClickHandler(i, this.c.getLevelList().get(i)));
+                this.buildingCanvas.getChildren().add(tmpBuildingButton);
+                this.GUILevelButtons.add(tmpBuildingButton);
+            }
+        }
+        else {
+            for (int i = 0; i < 10; ++i){
+                Button tmpBuildingButton = new Button("#" + (i + 1));
+                tmpBuildingButton.setPrefSize(60, 40);
+                tmpBuildingButton.setLayoutX(10);
+                tmpBuildingButton.setLayoutY(768 - (i + 1) * 60 + 10);
+                tmpBuildingButton.setOnAction(new LevelButtonOnClickHandler(i, this.c.getLevelList().get(i)));
+                this.buildingCanvas.getChildren().add(tmpBuildingButton);
+                this.GUILevelButtons.add(tmpBuildingButton);
+            }
+            for (int i = 10; i < levs; ++i){
+                Button tmpBuildingButton = new Button("#" + (i + 1));
+                tmpBuildingButton.setPrefSize(60, 40);
+                tmpBuildingButton.setLayoutX(10);
+                tmpBuildingButton.setLayoutY(768 - (i - 10 + 1) * 60 + 10); 
+                tmpBuildingButton.setOnAction(new LevelButtonOnClickHandler(i, this.c.getLevelList().get(i)));
+                this.GUILevelButtons.add(tmpBuildingButton);
+            }
+            Button pageUpButton = new Button("PageUp");
+            pageUpButton.setOnAction(new PageButtonOnClickHandler(true,this));
+            Button pageDownButton = new Button("PageDown");
+            pageDownButton.setOnAction(new PageButtonOnClickHandler(false, this));
+            pageUpButton.setPrefSize(100, 60);
+            pageDownButton.setPrefSize(100, 60);
+            pageUpButton.setLayoutX(10);
+            pageDownButton.setLayoutX(120);
+            pageUpButton.setLayoutY(60);
+            pageDownButton.setLayoutY(60);
+            this.buildingCanvas.getChildren().addAll(pageUpButton, pageDownButton);
+        }
+    }
+
+    public void moveElevator(int index, int lev){
+        if (this.c.getLevels() <= 10) {
+            --index;
+            this.GUIElevatorLabels.get(index).setLayoutY(768 - 60 * lev);
+            System.out.printf("View: Elevator#%d moved to #%d Level.\n", index + 1, lev);
+        }
+        else {
+            --index;
+            if (this.isFirstPageShown){
+                if (lev > 10){
+                    this.GUIElevatorLabels.get(index).setLayoutY(768 - 60 * (lev - 10));
+                    this.unshowElevator(this.GUIElevatorLabels.get(index));
+                    System.out.printf("View: Elevator#%d moved to #%d Level, and not shown.\n", index + 1, lev);
+                }
+                else {
+                    this.GUIElevatorLabels.get(index).setLayoutY(768 - 60 * lev);
+                    this.showElevator(this.GUIElevatorLabels.get(index));
+                    System.out.printf("View: Elevator#%d moved to #%d Level, and shown.\n", index + 1, lev);
+                }
+            }
+            else {
+                if (lev <= 10){
+                    this.GUIElevatorLabels.get(index).setLayoutY(768 - 60 * lev);
+                    this.unshowElevator(this.GUIElevatorLabels.get(index));
+                    System.out.printf("View: Elevator#%d moved to #%d Level, and not shown.\n", index + 1, lev);
+                }
+                else {
+                    this.GUIElevatorLabels.get(index).setLayoutY(768 - 60 * (lev - 10));
+                    this.showElevator(this.GUIElevatorLabels.get(index));
+                    System.out.printf("View: Elevator#%d moved to #%d Level, and shown.\n", index + 1, lev);
+                }
+            }
+        }
+    }
+
+    private void showElevator(Label e){
+        Platform.runLater(() -> {
+            if (!this.buildingCanvas.getChildren().contains(e)){
+                this.buildingCanvas.getChildren().add(e);
+            }
+        });
+    }
+
+    private void unshowElevator(Label e){
+        Platform.runLater(() -> {
+            if (this.buildingCanvas.getChildren().contains(e)){
+                this.buildingCanvas.getChildren().remove(e);
+            }
+        });
+    }
+
+    private void setIsFirstPageShown(boolean isFirstPageShownIndicator){
+        this.isFirstPageShown = isFirstPageShownIndicator;
     }
 
     @FXML
@@ -111,6 +400,8 @@ public class View extends Application {
 
     @FXML
     private void onClickCreateBuildingButton(){
+        if (this.c != null)
+            this.c.stopThread();
         System.out.println("View: Create a new building.");
         int levels = Integer.parseInt(this.numberOfLevelsText.getCharacters().toString());
         System.out.printf("View: # of levels: %d\n", levels);
@@ -145,15 +436,17 @@ public class View extends Application {
             }
             this.strategyListView.setItems(FXCollections.observableArrayList("Speed First", "Load Balancing", "Power Saving"));
         }
-        this.c.randomizeElevators();
-        this.initGUIElevators(0);
+        this.isFirstPageShown = true;
+//        this.c.randomizeElevators();
+        this.initGUIElevators(elevators);
+        this.initGUILevels(levels);
         this.c.start();
     }
 
     @FXML
     private void onClickAddPassengerButton(){
         System.out.println("View: Add a passenger.");
-        if (!this.c.isBuildingCreated()){
+        if (this.c == null || !this.c.isBuildingCreated()){
             Alert errorNullBuilding = new Alert(Alert.AlertType.INFORMATION, "Please create the building FIRST!");
             errorNullBuilding.setTitle("Building not Created Error!");
             errorNullBuilding.setHeaderText("Information");
@@ -204,7 +497,7 @@ public class View extends Application {
     @FXML
     private void onClickTestPassengerListButton(){
         System.out.println("View: Test-case passenger.");
-        if (!this.c.isBuildingCreated()){
+        if (this.c == null || !this.c.isBuildingCreated()){
             Alert errorNullBuilding = new Alert(Alert.AlertType.INFORMATION, "Please create the building FIRST!");
             errorNullBuilding.setTitle("Building not Created Error!");
             errorNullBuilding.setHeaderText("Information");

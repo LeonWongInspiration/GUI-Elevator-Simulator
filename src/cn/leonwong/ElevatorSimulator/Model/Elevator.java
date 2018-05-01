@@ -1,4 +1,4 @@
-package cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model;
+package cn.leonwong.ElevatorSimulator.Model;
 
 import java.util.ArrayList;
 import java.util.Vector;
@@ -269,5 +269,13 @@ public class Elevator extends Thread {
 
     public void stopThread(){
         this.stop = true;
+    }
+
+    public String getDestinations(){
+        return this.destinations.toString();
+    }
+
+    public int getDestinationSize(){
+        return this.destinations.size();
     }
 }

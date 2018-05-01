@@ -1,4 +1,4 @@
-package cn.leonwong.ElevatorSimulator.cn.leonwong.ElevatorSimulator.Model;
+package cn.leonwong.ElevatorSimulator.Model;
 
 import java.util.Vector;
 import java.util.concurrent.locks.ReentrantLock;

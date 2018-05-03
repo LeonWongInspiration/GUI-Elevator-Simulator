@@ -1,0 +1,70 @@
+\hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building}{}\section{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Building Class Reference}
+\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building}\index{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Building@{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Building}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a1e083b2c0741e1b45d620401f67b51c3}{Building} (int levs, int elevs, int max\+Pass)
+\item 
+int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a3cadfe7c0bcba1c58da3e4813985d713}{get\+Elevators} ()
+\item 
+int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a140ef7ab3469607bd537c51b3da5b833}{get\+Levels} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a8317933aa9a1de07f64a8de984e19551}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a8317933aa9a1de07f64a8de984e19551}} 
+Vector$<$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator}{Elevator} $>$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a8317933aa9a1de07f64a8de984e19551}{elevator\+List}
+\begin{DoxyCompactList}\small\item\em Note for each elevator in this building. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_ae720233ad2086c6f427facb19df4fb33}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_ae720233ad2086c6f427facb19df4fb33}} 
+Vector$<$ Vector$<$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_passenger}{Passenger} $>$ $>$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_ae720233ad2086c6f427facb19df4fb33}{level\+List}
+\begin{DoxyCompactList}\small\item\em Note for persons waiting for elevators in each level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a01f6bba8a7c8f2a26a34f7ee8c055275}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a01f6bba8a7c8f2a26a34f7ee8c055275}} 
+Vector$<$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message}{Message} $>$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a01f6bba8a7c8f2a26a34f7ee8c055275}{message\+Center}
+\begin{DoxyCompactList}\small\item\em A message center noting for events;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building}{Building} Simulator Creates a building with given levels and elevators 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a1e083b2c0741e1b45d620401f67b51c3}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a1e083b2c0741e1b45d620401f67b51c3}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building}!Building@{Building}}
+\index{Building@{Building}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building}}
+\subsubsection{\texorpdfstring{Building()}{Building()}}
+{\footnotesize\ttfamily cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Building.\+Building (\begin{DoxyParamCaption}\item[{int}]{levs,  }\item[{int}]{elevs,  }\item[{int}]{max\+Pass }\end{DoxyParamCaption})}
+
+Creates a building 
+\begin{DoxyParams}{Parameters}
+{\em levs} & \#levels in ths building \\
+\hline
+{\em elevs} & \#elevators in this building \\
+\hline
+{\em max\+Pass} & max \# of passengers an elevator can contain \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a3cadfe7c0bcba1c58da3e4813985d713}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a3cadfe7c0bcba1c58da3e4813985d713}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building}!get\+Elevators@{get\+Elevators}}
+\index{get\+Elevators@{get\+Elevators}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building}}
+\subsubsection{\texorpdfstring{get\+Elevators()}{getElevators()}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Building.\+get\+Elevators (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for numbers of elevators \begin{DoxyReturn}{Returns}
+numbers of elevators in this building 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a140ef7ab3469607bd537c51b3da5b833}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building_a140ef7ab3469607bd537c51b3da5b833}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building}!get\+Levels@{get\+Levels}}
+\index{get\+Levels@{get\+Levels}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Building}}
+\subsubsection{\texorpdfstring{get\+Levels()}{getLevels()}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Building.\+get\+Levels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for numbers of levels \begin{DoxyReturn}{Returns}
+numbers of levels in this building 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/cn/leonwong/\+Elevator\+Simulator/\+Model/Building.\+java\end{DoxyCompactItemize}

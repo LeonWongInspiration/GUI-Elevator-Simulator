@@ -1,0 +1,228 @@
+\hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator}{}\section{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator Class Reference}
+\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator}\index{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator@{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator}}
+Inheritance diagram for cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Direction}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a45bf0b0add86d6c9f4624aa91804d3c9}{start} ()
+\item 
+void \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_af9cb9d7e34873bc531ec71aa4ed3deae}{run} ()
+\item 
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a40f92b8d5f76462a4894e4b4bd670458}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a40f92b8d5f76462a4894e4b4bd670458}} 
+String {\bfseries to\+String} ()
+\item 
+\hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8cdebccdd3505647fe57df5ea4315c1a}{Elevator} (int name, int max, int max\+Pass, Vector$<$ Vector$<$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_passenger}{Passenger} $>$ $>$ levs, Vector$<$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message}{Message} $>$ mess, Reentrant\+Lock l)
+\item 
+boolean \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a6abc5ffe66c8be2d11493fb9d9a2022f}{is\+Full} ()
+\item 
+boolean \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a524eaa48c98d600d587c9e81f47e477b}{is\+Empty} ()
+\item 
+boolean \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_afef928208c5445a18af5d567ce9a4467}{is\+Idle} ()
+\item 
+void \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_ad735b8fd22b1b990a02caa95a9c8b96f}{add\+Destination} (int dest)
+\item 
+int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a393eaa2daf4a00730685de6efb3893d5}{get\+Level} ()
+\item 
+int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a0a386b72bfc7edf9a64dcc342dd27f51}{get\+Direction} ()
+\item 
+int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acc5b1cdd5cefc853a1cd33e6e986b3a0}{get\+Max\+Destination} ()
+\item 
+int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a9aeca7de346d6a46aea0692a60e57681}{get\+Min\+Destination} ()
+\item 
+int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acd5f3b902008c64175d9b5c035e8d77f}{get\+Passengers} ()
+\item 
+void \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_aadee7a0c9b8e13427d46a9f907dcee94}{set\+Level} (int l)
+\item 
+void \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a838e6a91c1e6d1ed2786efc462c48151}{stop\+Thread} ()
+\item 
+String \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_aca1fa93441f3463aece03f01591efa61}{get\+Destinations} ()
+\item 
+int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8e71679aa5ed47ac62be7d4193f81055}{get\+Destination\+Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_af9cc2a12533172485e7539f3690b2af9}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_af9cc2a12533172485e7539f3690b2af9}} 
+static final int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_af9cc2a12533172485e7539f3690b2af9}{F\+L\+O\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL} = 500
+\begin{DoxyCompactList}\small\item\em time interval for going to another floor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_ac80145be36386f30ed5b40518706fdc6}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_ac80145be36386f30ed5b40518706fdc6}} 
+static final int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_ac80145be36386f30ed5b40518706fdc6}{P\+A\+S\+S\+\_\+\+I\+N\+T\+E\+R\+V\+AL} = 200
+\begin{DoxyCompactList}\small\item\em time interval for a passenger entering/leaving \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator}{Elevator} Thread \begin{DoxyAuthor}{Author}
+1652795 Leon Wong 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8cdebccdd3505647fe57df5ea4315c1a}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8cdebccdd3505647fe57df5ea4315c1a}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!Elevator@{Elevator}}
+\index{Elevator@{Elevator}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{Elevator()}{Elevator()}}
+{\footnotesize\ttfamily cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+Elevator (\begin{DoxyParamCaption}\item[{int}]{name,  }\item[{int}]{max,  }\item[{int}]{max\+Pass,  }\item[{Vector$<$ Vector$<$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_passenger}{Passenger} $>$ $>$}]{levs,  }\item[{Vector$<$ \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message}{Message} $>$}]{mess,  }\item[{Reentrant\+Lock}]{l }\end{DoxyParamCaption})}
+
+create a new elevator 
+\begin{DoxyParams}{Parameters}
+{\em name} & the in dex of this elevator \\
+\hline
+{\em max} & the max level of the building \\
+\hline
+{\em max\+Pass} & the capacity of this elevator \\
+\hline
+{\em levs} & a list for passengers in each level \\
+\hline
+{\em mess} & message center \\
+\hline
+{\em l} & a reentrantlock to lock level list \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_ad735b8fd22b1b990a02caa95a9c8b96f}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_ad735b8fd22b1b990a02caa95a9c8b96f}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!add\+Destination@{add\+Destination}}
+\index{add\+Destination@{add\+Destination}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{add\+Destination()}{addDestination()}}
+{\footnotesize\ttfamily void cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+add\+Destination (\begin{DoxyParamCaption}\item[{int}]{dest }\end{DoxyParamCaption})}
+
+add a destination for this elevator 
+\begin{DoxyParams}{Parameters}
+{\em dest} & the destination level to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_aca1fa93441f3463aece03f01591efa61}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_aca1fa93441f3463aece03f01591efa61}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!get\+Destinations@{get\+Destinations}}
+\index{get\+Destinations@{get\+Destinations}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{get\+Destinations()}{getDestinations()}}
+{\footnotesize\ttfamily String cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+get\+Destinations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for a list of destinations of this elevator in a String \begin{DoxyReturn}{Returns}
+the String of list of destinations 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8e71679aa5ed47ac62be7d4193f81055}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8e71679aa5ed47ac62be7d4193f81055}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!get\+Destination\+Size@{get\+Destination\+Size}}
+\index{get\+Destination\+Size@{get\+Destination\+Size}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{get\+Destination\+Size()}{getDestinationSize()}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+get\+Destination\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for the destination list\textquotesingle{}s size \begin{DoxyReturn}{Returns}
+this size of this destination list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a0a386b72bfc7edf9a64dcc342dd27f51}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a0a386b72bfc7edf9a64dcc342dd27f51}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!get\+Direction@{get\+Direction}}
+\index{get\+Direction@{get\+Direction}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{get\+Direction()}{getDirection()}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for the current direction of this elevator \begin{DoxyReturn}{Returns}
+the current direction of this elevator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a393eaa2daf4a00730685de6efb3893d5}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a393eaa2daf4a00730685de6efb3893d5}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!get\+Level@{get\+Level}}
+\index{get\+Level@{get\+Level}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{get\+Level()}{getLevel()}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+get\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for the current level this elevator is at \begin{DoxyReturn}{Returns}
+the current level this elevator is at 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acc5b1cdd5cefc853a1cd33e6e986b3a0}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acc5b1cdd5cefc853a1cd33e6e986b3a0}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!get\+Max\+Destination@{get\+Max\+Destination}}
+\index{get\+Max\+Destination@{get\+Max\+Destination}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{get\+Max\+Destination()}{getMaxDestination()}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+get\+Max\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for the biggest level this elevator is heading for \begin{DoxyReturn}{Returns}
+the biggest number of level in destination list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a9aeca7de346d6a46aea0692a60e57681}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a9aeca7de346d6a46aea0692a60e57681}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!get\+Min\+Destination@{get\+Min\+Destination}}
+\index{get\+Min\+Destination@{get\+Min\+Destination}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{get\+Min\+Destination()}{getMinDestination()}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+get\+Min\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for the lowest level this elevator is heading for \begin{DoxyReturn}{Returns}
+the smallest number of level in destination list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acd5f3b902008c64175d9b5c035e8d77f}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acd5f3b902008c64175d9b5c035e8d77f}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!get\+Passengers@{get\+Passengers}}
+\index{get\+Passengers@{get\+Passengers}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{get\+Passengers()}{getPassengers()}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+get\+Passengers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for the numbers of passengers in this elevator \begin{DoxyReturn}{Returns}
+the number of passengers in this elevator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a524eaa48c98d600d587c9e81f47e477b}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a524eaa48c98d600d587c9e81f47e477b}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily boolean cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+decide whether this elevator is empty \begin{DoxyReturn}{Returns}
+true if this elevator is empty, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a6abc5ffe66c8be2d11493fb9d9a2022f}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a6abc5ffe66c8be2d11493fb9d9a2022f}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!is\+Full@{is\+Full}}
+\index{is\+Full@{is\+Full}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{is\+Full()}{isFull()}}
+{\footnotesize\ttfamily boolean cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+is\+Full (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+decide whether this elevator is full \begin{DoxyReturn}{Returns}
+true if this elevator is full, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_afef928208c5445a18af5d567ce9a4467}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_afef928208c5445a18af5d567ce9a4467}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!is\+Idle@{is\+Idle}}
+\index{is\+Idle@{is\+Idle}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{is\+Idle()}{isIdle()}}
+{\footnotesize\ttfamily boolean cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+is\+Idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+decide whether this elevator is idle \begin{DoxyReturn}{Returns}
+true if this elevator is idle, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_af9cb9d7e34873bc531ec71aa4ed3deae}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_af9cb9d7e34873bc531ec71aa4ed3deae}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!run@{run}}
+\index{run@{run}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Run function \mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_aadee7a0c9b8e13427d46a9f907dcee94}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_aadee7a0c9b8e13427d46a9f907dcee94}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!set\+Level@{set\+Level}}
+\index{set\+Level@{set\+Level}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{set\+Level()}{setLevel()}}
+{\footnotesize\ttfamily void cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+set\+Level (\begin{DoxyParamCaption}\item[{int}]{l }\end{DoxyParamCaption})}
+
+directly move this elevator to a level 
+\begin{DoxyParams}{Parameters}
+{\em l} & the destination level \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a45bf0b0add86d6c9f4624aa91804d3c9}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a45bf0b0add86d6c9f4624aa91804d3c9}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!start@{start}}
+\index{start@{start}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Start this Thread \mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a838e6a91c1e6d1ed2786efc462c48151}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a838e6a91c1e6d1ed2786efc462c48151}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}!stop\+Thread@{stop\+Thread}}
+\index{stop\+Thread@{stop\+Thread}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Elevator}}
+\subsubsection{\texorpdfstring{stop\+Thread()}{stopThread()}}
+{\footnotesize\ttfamily void cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Elevator.\+stop\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+used to stop this thread 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/cn/leonwong/\+Elevator\+Simulator/\+Model/Elevator.\+java\end{DoxyCompactItemize}

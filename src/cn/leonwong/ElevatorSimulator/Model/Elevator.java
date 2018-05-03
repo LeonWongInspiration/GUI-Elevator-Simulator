@@ -11,7 +11,9 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Elevator extends Thread {
 
+    /// time interval for going to another floor
     public static final int FLOOR_INTERVAL = 500;
+    /// time interval for a passenger entering/leaving
     public static final int PASS_INTERVAL = 200;
 
     /**
@@ -129,6 +131,15 @@ public class Elevator extends Thread {
         return "This is the #" + this.index + " Elevator.";
     }
 
+    /**
+     * create a new elevator
+     * @param name the in dex of this elevator
+     * @param max the max level of the building
+     * @param maxPass the capacity of this elevator
+     * @param levs a list for passengers in each level
+     * @param mess message center
+     * @param l a reentrantlock to lock level list
+     */
     public Elevator(int name, int max, int maxPass, Vector< Vector<Passenger> > levs, Vector<Message> mess, ReentrantLock l){
         this.index = name;
         this.maxLevel = max;
@@ -144,6 +155,12 @@ public class Elevator extends Thread {
         this.stop = false;
     }
 
+    /**
+     * add one passenger into this elevator
+     * @param lev where the passenger entered the elevator
+     * @param pass an object refering to the passenger
+     * @return true if the passenger entered this elevator successfully, false otherwise
+     */
     private synchronized boolean passengerEnterElevetor(int lev, Passenger pass){
         if (this.isFull()) {
             System.out.printf("Elevator: Elevator #%d is full!\n", this.index);
@@ -167,6 +184,12 @@ public class Elevator extends Thread {
         }
     }
 
+    /**
+     * remove a passenger from this elevator
+     * @param lev the level that the passenger leaves at
+     * @param pass an object refering to the passenger
+     * @return true if the passenger removed successfully, false otherwise
+     */
     private synchronized boolean passengerLeaveElevator(int lev, Passenger pass){
         if (this.isEmpty())
             return false;
@@ -186,26 +209,49 @@ public class Elevator extends Thread {
         }
     }
 
+    /**
+     * decide whether this elevator is full
+     * @return true if this elevator is full, false otherwise
+     */
     public boolean isFull(){
         return this.passengerList.size() == this.maxPassenger;
     }
 
+    /**
+     * decide whether this elevator is empty
+     * @return true if this elevator is empty, false otherwise
+     */
     public boolean isEmpty(){
         return this.passengerList.isEmpty();
     }
 
+    /**
+     * decide whether this elevator is idle
+     * @return true if this elevator is idle, false otherwise
+     */
     public boolean isIdle(){
         return this.destinations.isEmpty();
     }
 
+    /**
+     * add a destination for this elevator
+     * @param dest the destination level to be added
+     */
     public void addDestination(int dest){
         this.destinations.add(dest);
     }
 
+    /**
+     * getter for the current level this elevator is at
+     * @return the current level this elevator is at
+     */
     public int getLevel(){
         return this.level;
     }
 
+    /**
+     * decide what direction this elevator should go after a level's all work done
+     */
     private synchronized void decideDirection(){
         // if the elevator has just changed its direction...
         if (this.direction == Direction.changingDirection){
@@ -232,49 +278,90 @@ public class Elevator extends Thread {
         this.direction = Direction.changingDirection;
     }
 
+    /**
+     * getter for the current direction of this elevator
+     * @return the current direction of this elevator
+     */
     public int getDirection() {
         return direction;
     }
 
+    /**
+     * getter for the biggest level this elevator is heading for
+     * @return the biggest number of level in destination list
+     */
     public int getMaxDestination(){
         int maxLev = 0;
         for (Passenger p : this.passengerList)
             if (p.destination > maxLev)
                 maxLev = p.destination;
+        for (Integer i : this.destinations)
+            if (i > maxLev)
+                maxLev = i;
         return maxLev;
     }
 
+    /**
+     * getter for the lowest level this elevator is heading for
+     * @return the smallest number of level in destination list
+     */
     public int getMinDestination(){
         int minLev = this.maxLevel;
         for (Passenger p : this.passengerList)
             if (p.destination < minLev)
                 minLev = p.destination;
+        for (Integer i : this.destinations)
+            if (i < minLev)
+                minLev = i;
         return minLev;
     }
 
+    /**
+     * getter for the numbers of passengers in this elevator
+     * @return the number of passengers in this elevator
+     */
     public int getPassengers(){
         return this.passengerList.size();
     }
 
+    /**
+     * use this to ensure that every passenger's destination is in this destination list
+     */
     private void decideDestinations(){
         for (Passenger pass : this.passengerList)
             this.destinations.add(pass.destination);
     }
 
+    /**
+     * directly move this elevator to a level
+     * @param l the destination level
+     */
     public void setLevel(int l){
         this.level = l;
     }
 
+    /// decide whether this thread has been stopped
     private boolean stop;
 
+    /**
+     * used to stop this thread
+     */
     public void stopThread(){
         this.stop = true;
     }
 
+    /**
+     * getter for a list of destinations of this elevator in a String
+     * @return the String of list of destinations
+     */
     public String getDestinations(){
         return this.destinations.toString();
     }
 
+    /**
+     * getter for the destination list's size
+     * @return this size of this destination list
+     */
     public int getDestinationSize(){
         return this.destinations.size();
     }

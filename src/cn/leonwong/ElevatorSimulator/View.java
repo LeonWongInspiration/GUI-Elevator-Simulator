@@ -25,21 +25,41 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
 
+/**
+ * the view of this app
+ */
 public class View extends Application {
+    /// controller Object
     private Controller c;
+    /// contains buttons for elevators
     private ArrayList<Button> GUIElevatorButtons;
+    /// contains labels for elevators
     private ArrayList<Label> GUIElevatorLabels;
+    /// contains buttons for levels
     private ArrayList<Button> GUILevelButtons;
+    /// if there are two pages, indicate which one is being shown
     private Boolean isFirstPageShown;
 
+    /**
+     * stop all threads on exit
+     */
     private class ExitHandler implements EventHandler<WindowEvent> {
+        /// denote the view
         private View view;
 
+        /**
+         * create exit handler
+         * @param v the view
+         */
         public ExitHandler(View v){
             System.out.println("View: Exit Handler Created");
             this.view = v;
         }
 
+        /**
+         * when exit triggered, kill all threads
+         * @param e the event
+         */
         @Override
         public void handle(WindowEvent e){
             e.consume();
@@ -48,15 +68,29 @@ public class View extends Application {
         }
     }
 
+    /**
+     * show information of an elevator when clicking the elevator button
+     */
     private class ElevatorButtonOnClickHandler implements EventHandler<javafx.event.ActionEvent> {
+        /// the index of this elevator
         private int indexOfElevator;
+        /// an Object refering to the elevator
         private Elevator elevator;
 
+        /**
+         * constructor
+         * @param index the index of this elevator
+         * @param elev the Object of elevator
+         */
         public ElevatorButtonOnClickHandler(int index, Elevator elev){
             this.indexOfElevator = index;
             this.elevator = elev;
         }
 
+        /**
+         * show information when clicking the elevator button
+         * @param event the event
+         */
         @Override
         public void handle(javafx.event.ActionEvent event){
             event.consume();
@@ -81,15 +115,29 @@ public class View extends Application {
         }
     }
 
+    /**
+     * show information when clicking the level button
+     */
     private class LevelButtonOnClickHandler implements EventHandler<javafx.event.ActionEvent>{
+        /// the index of this level
         private int indexOfLevel;
+        /// the passenger list of this level
         private Vector<Passenger> level;
 
+        /**
+         * constructor
+         * @param i the index of this level
+         * @param vp the vector of passenger at this level
+         */
         public LevelButtonOnClickHandler(int i, Vector<Passenger> vp){
             this.indexOfLevel = i;
             this.level = vp;
         }
 
+        /**
+         * show information when clicking the level button
+         * @param event the event
+         */
         @Override
         public void handle(javafx.event.ActionEvent event){
             event.consume();
@@ -117,6 +165,11 @@ public class View extends Application {
             levelAlert.showAndWait();
         }
 
+        /**
+         * describe a level with its passengers in a String form
+         * @param lev the passenger list of this level
+         * @return the String which contains the passengers' destinations of this level
+         */
         private String parseString(Vector<Passenger> lev){
             ArrayList<Integer> ai = new ArrayList<>();
             for (Passenger pass : lev){
@@ -125,6 +178,10 @@ public class View extends Application {
             return ai.toString();
         }
 
+        /**
+         * decide whether the upward indicator at a level is shown
+         * @return the upward indicator
+         */
         private char decideUpwardIndicator(){
             for (Passenger pass : this.level){
                 if (pass.destination > this.indexOfLevel + 1)
@@ -133,6 +190,10 @@ public class View extends Application {
             return '△';
         }
 
+        /**
+         * decide whether the downward indicator at a level is shown
+         * @return the downward indicator
+         */
         private char decideDownwardIndicator(){
             for (Passenger pass : this.level){
                 if (pass.destination < this.indexOfLevel + 1)
@@ -142,26 +203,45 @@ public class View extends Application {
         }
     }
 
+    /**
+     * change the page showing
+     */
     private class PageButtonOnClickHandler implements EventHandler<javafx.event.ActionEvent>{
+        /// denote whether this button is a page up button
         private boolean pageUp;
+        /// refer to level buttons
         private ArrayList<Button> levelButtons;
-        private ArrayList<Label> elevLables;
+        /// refer to elevator labels
+        private ArrayList<Label> elevLabels;
+        /// refer to elevator list
         private Vector<Elevator> elevs;
+        /// refer to the canvas which shows the building
         private AnchorPane canvas;
+        /// refer to the view
         View view;
 
+        /**
+         * construct a page button
+         * @param isPageUpButton whether this button is page up button
+         * @param v the view
+         */
         public PageButtonOnClickHandler(boolean isPageUpButton, View v){
             this.pageUp = isPageUpButton;
             this.levelButtons = v.GUILevelButtons;
-            this.elevLables = v.GUIElevatorLabels;
+            this.elevLabels = v.GUIElevatorLabels;
             this.elevs = v.c.getElevatorList();
             this.canvas = v.buildingCanvas;
             this.view = v;
         }
 
+        /**
+         * handle the page changing event
+         * @param event the event
+         */
         @Override
         public void handle(javafx.event.ActionEvent event){
             event.consume();
+            // if this is the page up button, show the levels and elevators at the #11+ floors
             if (this.pageUp){
                 this.view.setIsFirstPageShown(false);
                 for (int i = 0; i < 10; ++i){
@@ -175,13 +255,14 @@ public class View extends Application {
                 }
                 for (int i = 0; i < elevs.size(); ++i){
                     if (elevs.get(i).getLevel() > 10){
-                        this.view.showElevator(elevLables.get(i));
+                        this.view.showElevator(elevLabels.get(i));
                     }
                     else {
-                        this.view.unshowElevator(elevLables.get(i));
+                        this.view.unshowElevator(elevLabels.get(i));
                     }
                 }
             }
+            // else show those at #10- floors
             else {
                 this.view.setIsFirstPageShown(true);
                 for (int i = 10; i < this.levelButtons.size(); ++i) {
@@ -195,22 +276,30 @@ public class View extends Application {
                 }
                 for (int i = 0; i < elevs.size(); ++i){
                     if (elevs.get(i).getLevel() > 10){
-                        this.view.unshowElevator(elevLables.get(i));
+                        this.view.unshowElevator(elevLabels.get(i));
                     }
                     else {
-                        this.view.showElevator(elevLables.get(i));
+                        this.view.showElevator(elevLabels.get(i));
                     }
                 }
             }
         }
     }
 
+    /**
+     * stop this thread
+     */
     public void stopThread(){
         if (this.c != null)
             this.c.stopThread();
         System.exit(0);
     }
 
+    /**
+     * start this application
+     * @param primaryStage the main stage
+     * @throws Exception if the application faces some errors starting itself, there will be some exceptions thrown
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
@@ -221,10 +310,18 @@ public class View extends Application {
 //        Runtime.getRuntime().addShutdownHook(new ExitHandler(this));
     }
 
+    /**
+     * nothing to comment here...
+     * @param args command line arguments which are not used
+     */
     public static void main(String[] args) {
         launch(args);
     }
 
+    /**
+     * initialize elevators on the canvas
+     * @param elevs the number of elevators
+     */
     private void initGUIElevators(int elevs){
         this.GUIElevatorButtons = new ArrayList<>();
         this.GUIElevatorLabels = new ArrayList<>();
@@ -256,6 +353,10 @@ public class View extends Application {
         }
     }
 
+    /**
+     * initialize levels on the canvas, should create page buttons according to the number of levels
+     * @param levs the number of levels
+     */
     private void initGUILevels(int levs){
         this.GUILevelButtons = new ArrayList<>();
 
@@ -310,6 +411,11 @@ public class View extends Application {
         }
     }
 
+    /**
+     * re-draw an elevator at some level, should show or un-show them according to the page
+     * @param index the index of the elevator
+     * @param lev the new level the elevator is at
+     */
     public void moveElevator(int index, int lev){
         if (this.c.getLevels() <= 10) {
             --index;
@@ -345,6 +451,10 @@ public class View extends Application {
         }
     }
 
+    /**
+     * show an elevator
+     * @param e the elevator label
+     */
     private void showElevator(Label e){
         Platform.runLater(() -> {
             if (!this.buildingCanvas.getChildren().contains(e)){
@@ -353,6 +463,10 @@ public class View extends Application {
         });
     }
 
+    /**
+     * un-show an elevator
+     * @param e the label of the elevator
+     */
     private void unshowElevator(Label e){
         Platform.runLater(() -> {
             if (this.buildingCanvas.getChildren().contains(e)){
@@ -361,43 +475,61 @@ public class View extends Application {
         });
     }
 
+    /**
+     * set the page showing
+     * @param isFirstPageShownIndicator true if the first page is being shown, false otherwise
+     */
     private void setIsFirstPageShown(boolean isFirstPageShownIndicator){
         this.isFirstPageShown = isFirstPageShownIndicator;
     }
 
+    /// to write down the number of levels for the user
     @FXML
     private TextField numberOfLevelsText;
 
+    /// to write down the number of elevators for the user
     @FXML
     private TextField numberOfElevatorsText;
 
+    /// the button of creating a new building
     @FXML
     private Button createBuildingButton;
 
+    /// to write down the capacity of the elevators for the user
     @FXML
     private TextField capacityText;
 
+    /// when adding a new passenger, choose its starting level here
     @FXML
     private ChoiceBox<Integer> startingLevelChoiceBox;
 
+    /// when adding a new passenger, choose its destination here
     @FXML
     private ChoiceBox<Integer> destLevelChoiceBox;
 
+    /// the button to add a new passegner
     @FXML
     private Button addPassengerButton;
 
+    /// list the three strategies and make the user choose by this ListView
     @FXML
     private ListView<String> strategyListView;
 
+    /// show the help information of strategies button
     @FXML
     private Button strategyHelpButton;
 
+    /// the button to add random passengers
     @FXML
     private Button testPassengerListButton;
 
+    /// the canvas to draw the whole building
     @FXML
     private AnchorPane buildingCanvas;
 
+    /**
+     * when click on the create building button, create the building but firstly check the parameters
+     */
     @FXML
     private void onClickCreateBuildingButton(){
         if (this.c != null)
@@ -443,9 +575,13 @@ public class View extends Application {
         this.c.start();
     }
 
+    /**
+     * handle the event that the user requires to add a new passenger
+     */
     @FXML
     private void onClickAddPassengerButton(){
         System.out.println("View: Add a passenger.");
+        // if the building has not been created...
         if (this.c == null || !this.c.isBuildingCreated()){
             Alert errorNullBuilding = new Alert(Alert.AlertType.INFORMATION, "Please create the building FIRST!");
             errorNullBuilding.setTitle("Building not Created Error!");
@@ -477,6 +613,9 @@ public class View extends Application {
         }
     }
 
+    /**
+     * show the help info about strategies
+     */
     @FXML
     private void onClickStrategyHelpButton(){
         StringBuilder sb = new StringBuilder();
@@ -494,6 +633,9 @@ public class View extends Application {
         strategyHelpMessage.showAndWait();
     }
 
+    /**
+     * add random passengers
+     */
     @FXML
     private void onClickTestPassengerListButton(){
         System.out.println("View: Test-case passenger.");
@@ -530,6 +672,9 @@ public class View extends Application {
         }
     }
 
+    /**
+     * change the strategy
+     */
     @FXML
     private void onChangingStrategyList(){
         int strategy = this.strategyListView.getSelectionModel().getSelectedIndex();

@@ -45,21 +45,19 @@ public class Building {
         }
     }
 
-//    public synchronized boolean addPassenger(int lev, Passenger pass){
-//        if (lev < 0 || lev > this.levels + 1){
-//            return false;
-//        }
-//        else {
-//            this.levelList.get(lev).add(pass);
-//            return true;
-//        }
-//    }
-
+    /**
+     * getter for numbers of elevators
+     * @return numbers of elevators in this building
+     */
     public int getElevators() {
-        return elevators;
+        return this.elevators;
     }
 
+    /**
+     * getter for numbers of levels
+     * @return numbers of levels in this building
+     */
     public int getLevels() {
-        return levels;
+        return this.levels;
     }
 }

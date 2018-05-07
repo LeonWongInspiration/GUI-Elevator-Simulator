@@ -176,8 +176,8 @@ public class Controller extends Thread {
                 // if the elevator's direction is the same as the passenger's...
                 else if (e.getDirection() * (to - from) >= 0) {
                     // and the elevator can arrive at the passenger's level without changing ite direction...
-                    if ((e.getDirection >= Elevator.Direction.ChangingDirection && from >= e.getLevel()) ||
-                            (e.getDirection <= Elevator.Direction.ChangingDirection && from <= e.getLevel()))
+                    if ((e.getDirection() >= Elevator.Direction.changingDirection && from >= e.getLevel()) ||
+                            (e.getDirection() <= Elevator.Direction.changingDirection && from <= e.getLevel()))
                         // the estimated time is just the floors which need a stop between
                         waitingTime.add(Math.abs(from - e.getLevel()) + e.getDestinationSize());
                     else
@@ -214,8 +214,8 @@ public class Controller extends Thread {
                     // if the elevator's direction is the same as the passenger's...
                 else if (e.getDirection() * (to - from) >= 0) {
                     // and the elevator can arrive at the passenger's level without changing ite direction...
-                    if ((e.getDirection >= Elevator.Direction.ChangingDirection && from >= e.getLevel()) ||
-                            (e.getDirection <= Elevator.Direction.ChangingDirection && from <= e.getLevel()))
+                    if ((e.getDirection() >= Elevator.Direction.changingDirection && from >= e.getLevel()) ||
+                            (e.getDirection() <= Elevator.Direction.changingDirection && from <= e.getLevel()))
                         // the estimated time is just the floors which need a stop between
                         waitingTime.add(Math.abs(from - e.getLevel()) + e.getDestinationSize() + e.getPassengers());
                     else
@@ -251,8 +251,8 @@ public class Controller extends Thread {
                     // if the elevator's direction is the same as the passenger's...
                 else if (e.getDirection() * (to - from) >= 0) {
                     // and the elevator can arrive at the passenger's level without changing ite direction...
-                    if ((e.getDirection >= Elevator.Direction.ChangingDirection && from >= e.getLevel()) ||
-                            (e.getDirection <= Elevator.Direction.ChangingDirection && from <= e.getLevel()))
+                    if ((e.getDirection() >= Elevator.Direction.changingDirection && from >= e.getLevel()) ||
+                            (e.getDirection() <= Elevator.Direction.changingDirection && from <= e.getLevel()))
                         // the estimated time is just the floors which need a stop between
                         waitingTime.add(Math.abs(from - e.getLevel()) + e.getDestinationSize());
                     else
@@ -275,7 +275,7 @@ public class Controller extends Thread {
                         fastestIndex = i;
             }
             // if all running elevators are full or idle...
-            if (waitingTime.get(fastestIndex) == Integer.Max_VALUE){
+            if (waitingTime.get(fastestIndex) == Integer.MAX_VALUE){
                 for (int i = 0; i < this.building.getElevators(); ++i)
                     if (this.getElevatorList().get(i).isIdle()){
                         fastestIndex = i;

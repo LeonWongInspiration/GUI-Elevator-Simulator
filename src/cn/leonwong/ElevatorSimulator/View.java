@@ -534,6 +534,9 @@ public class View extends Application {
     private void onClickCreateBuildingButton(){
         if (this.c != null)
             this.c.stopThread();
+        if (this.buildingCanvas != null){
+            this.buildingCanvas.getChildren().clear();
+        }
         System.out.println("View: Create a new building.");
         int levels = Integer.parseInt(this.numberOfLevelsText.getCharacters().toString());
         System.out.printf("View: # of levels: %d\n", levels);
@@ -555,6 +558,7 @@ public class View extends Application {
             errorParamMessage.setHeaderText("Information");
             errorParamMessage.showAndWait();
             System.out.println("View: Building Parameter Error!");
+            return;
         }
         else {
             this.c = new Controller();
@@ -566,7 +570,7 @@ public class View extends Application {
                 this.startingLevelChoiceBox.getItems().addAll(i);
                 this.destLevelChoiceBox.getItems().addAll(i);
             }
-            this.strategyListView.setItems(FXCollections.observableArrayList("Speed First", "Load Balancing", "Power Saving"));
+            this.strategyListView.setItems(FXCollections.observableArrayList("Speed First (Default)", "Load Balancing", "Power Saving"));
         }
         this.isFirstPageShown = true;
 //        this.c.randomizeElevators();
@@ -590,6 +594,10 @@ public class View extends Application {
             System.out.println("View: Building not Created Error!");
         }
         else {
+            if (this.startingLevelChoiceBox.getValue() == null || this.destLevelChoiceBox.getValue() == null){
+                System.out.println("View: Bad Passenger!");
+                return;
+            }
             int from = this.startingLevelChoiceBox.getValue();
             System.out.printf("View: Add a passenger from #%d level,\n", from);
             int to = this.destLevelChoiceBox.getValue();

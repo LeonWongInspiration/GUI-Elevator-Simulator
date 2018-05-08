@@ -41,7 +41,7 @@ public class Controller extends Thread {
     }
 
     /**
-     * strat this thread
+     * start this thread
      */
     @Override
     public void start(){

@@ -1,0 +1,31 @@
+digraph "cn.leonwong.ElevatorSimulator.Controller.getElevators"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node14 [label="cn.leonwong.ElevatorSimulator.\lController.getElevators",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="cn.leonwong.ElevatorSimulator.\lModel.Building.getElevators",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building.html#a3cadfe7c0bcba1c58da3e4813985d713"];
+  Node14 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.isFull",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#a6abc5ffe66c8be2d11493fb9d9a2022f"];
+  Node14 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.getDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#a0a386b72bfc7edf9a64dcc342dd27f51"];
+  Node14 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.getLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#a393eaa2daf4a00730685de6efb3893d5"];
+  Node14 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.getDestinationSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#a8e71679aa5ed47ac62be7d4193f81055"];
+  Node14 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="cn.leonwong.ElevatorSimulator.\lController.getLevels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#a027b4222bf633f8e83ad3c90654d487c"];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="cn.leonwong.ElevatorSimulator.\lModel.Building.getLevels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building.html#a140ef7ab3469607bd537c51b3da5b833"];
+  Node14 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.getMaxDestination",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#acc5b1cdd5cefc853a1cd33e6e986b3a0"];
+  Node14 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.getMinDestination",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#a9aeca7de346d6a46aea0692a60e57681"];
+  Node14 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.getPassengers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#acd5f3b902008c64175d9b5c035e8d77f"];
+  Node14 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.isIdle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#afef928208c5445a18af5d567ce9a4467"];
+  Node14 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="cn.leonwong.ElevatorSimulator.\lController.getElevatorList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#ae0276c45413f15649723ce5cb91062eb"];
+}

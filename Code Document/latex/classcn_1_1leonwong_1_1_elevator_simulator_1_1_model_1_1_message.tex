@@ -1,5 +1,9 @@
 \hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message}{}\section{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message Class Reference}
 \label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message}\index{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message@{cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message}}
+
+
+Collaboration diagram for cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,37 +12,33 @@
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a1c8801fa247ef11986bada2b1916e7e9}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a1c8801fa247ef11986bada2b1916e7e9}} 
 int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a1c8801fa247ef11986bada2b1916e7e9}{mode}
 \begin{DoxyCompactList}\small\item\em to denote which kind of message this one is \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a2f04cd7e8b278e50a64d9c35164e28ff}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a2f04cd7e8b278e50a64d9c35164e28ff}} 
 int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a2f04cd7e8b278e50a64d9c35164e28ff}{dest\+Elevator}
 \begin{DoxyCompactList}\small\item\em to denote the elevator that this message took place in \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a46cbc9bbeaed1cdc3ad481e17a3f13f8}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a46cbc9bbeaed1cdc3ad481e17a3f13f8}} 
 int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a46cbc9bbeaed1cdc3ad481e17a3f13f8}{dest\+Level}
 \begin{DoxyCompactList}\small\item\em to denote the level that this message took place at \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_ab4f4959e7867933efc65c6279ee36670}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_ab4f4959e7867933efc65c6279ee36670}} 
 \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_passenger}{Passenger} \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_ab4f4959e7867933efc65c6279ee36670}{pass}
 \begin{DoxyCompactList}\small\item\em to denote the passenger related to this message \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a8ff9f9824b15bd10efe3770f39a136dc}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a8ff9f9824b15bd10efe3770f39a136dc}} 
 static final int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a8ff9f9824b15bd10efe3770f39a136dc}{passenger\+Leave\+Elevator} = 0
 \begin{DoxyCompactList}\small\item\em used to indicate this message is describing a passenger leaving an elevator \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a3e7e9d33eaa7f246158d4b2151945379}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a3e7e9d33eaa7f246158d4b2151945379}} 
 static final int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a3e7e9d33eaa7f246158d4b2151945379}{passenger\+Enter\+Elevator} = 1
 \begin{DoxyCompactList}\small\item\em used to indicate this message is describing a passenger entering an elevator \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_aa2a04ac8a674b25966e29d05099afc16}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_aa2a04ac8a674b25966e29d05099afc16}} 
 static final int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_aa2a04ac8a674b25966e29d05099afc16}{elevator\+Change\+Floor} = 2
 \begin{DoxyCompactList}\small\item\em used to indicate this message is describing an elevator has moved to another floor \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a182e2c484b12304f0a091ad7d11deb33}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a182e2c484b12304f0a091ad7d11deb33}} 
 static final int \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a182e2c484b12304f0a091ad7d11deb33}{elevator\+Is\+Idle} = 3
 \begin{DoxyCompactList}\small\item\em used to indicate this message is describing an elevator is idle \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 a class which defines a message 
+
+Definition at line 6 of file Message.\+java.
+
+
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a26a9ea8cfcb1d61107a800a5e221ab6c}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a26a9ea8cfcb1d61107a800a5e221ab6c}} 
@@ -60,6 +60,125 @@ to build a new messafe
 \end{DoxyParams}
 
 
+Definition at line 32 of file Message.\+java.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a2f04cd7e8b278e50a64d9c35164e28ff}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a2f04cd7e8b278e50a64d9c35164e28ff}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}!dest\+Elevator@{dest\+Elevator}}
+\index{dest\+Elevator@{dest\+Elevator}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}}
+\subsubsection{\texorpdfstring{dest\+Elevator}{destElevator}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message.\+dest\+Elevator}
+
+
+
+to denote the elevator that this message took place in 
+
+
+
+Definition at line 19 of file Message.\+java.
+
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a46cbc9bbeaed1cdc3ad481e17a3f13f8}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a46cbc9bbeaed1cdc3ad481e17a3f13f8}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}!dest\+Level@{dest\+Level}}
+\index{dest\+Level@{dest\+Level}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}}
+\subsubsection{\texorpdfstring{dest\+Level}{destLevel}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message.\+dest\+Level}
+
+
+
+to denote the level that this message took place at 
+
+
+
+Definition at line 21 of file Message.\+java.
+
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_aa2a04ac8a674b25966e29d05099afc16}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_aa2a04ac8a674b25966e29d05099afc16}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}!elevator\+Change\+Floor@{elevator\+Change\+Floor}}
+\index{elevator\+Change\+Floor@{elevator\+Change\+Floor}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}}
+\subsubsection{\texorpdfstring{elevator\+Change\+Floor}{elevatorChangeFloor}}
+{\footnotesize\ttfamily final int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message.\+elevator\+Change\+Floor = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+used to indicate this message is describing an elevator has moved to another floor 
+
+
+
+Definition at line 12 of file Message.\+java.
+
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a182e2c484b12304f0a091ad7d11deb33}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a182e2c484b12304f0a091ad7d11deb33}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}!elevator\+Is\+Idle@{elevator\+Is\+Idle}}
+\index{elevator\+Is\+Idle@{elevator\+Is\+Idle}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}}
+\subsubsection{\texorpdfstring{elevator\+Is\+Idle}{elevatorIsIdle}}
+{\footnotesize\ttfamily final int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message.\+elevator\+Is\+Idle = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+used to indicate this message is describing an elevator is idle 
+
+
+
+Definition at line 14 of file Message.\+java.
+
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a1c8801fa247ef11986bada2b1916e7e9}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a1c8801fa247ef11986bada2b1916e7e9}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}!mode@{mode}}
+\index{mode@{mode}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message.\+mode}
+
+
+
+to denote which kind of message this one is 
+
+
+
+Definition at line 17 of file Message.\+java.
+
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_ab4f4959e7867933efc65c6279ee36670}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_ab4f4959e7867933efc65c6279ee36670}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}!pass@{pass}}
+\index{pass@{pass}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}}
+\subsubsection{\texorpdfstring{pass}{pass}}
+{\footnotesize\ttfamily \hyperlink{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_passenger}{Passenger} cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message.\+pass}
+
+
+
+to denote the passenger related to this message 
+
+
+
+Definition at line 23 of file Message.\+java.
+
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a3e7e9d33eaa7f246158d4b2151945379}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a3e7e9d33eaa7f246158d4b2151945379}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}!passenger\+Enter\+Elevator@{passenger\+Enter\+Elevator}}
+\index{passenger\+Enter\+Elevator@{passenger\+Enter\+Elevator}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}}
+\subsubsection{\texorpdfstring{passenger\+Enter\+Elevator}{passengerEnterElevator}}
+{\footnotesize\ttfamily final int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message.\+passenger\+Enter\+Elevator = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+used to indicate this message is describing a passenger entering an elevator 
+
+
+
+Definition at line 10 of file Message.\+java.
+
+\mbox{\Hypertarget{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a8ff9f9824b15bd10efe3770f39a136dc}\label{classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message_a8ff9f9824b15bd10efe3770f39a136dc}} 
+\index{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}!passenger\+Leave\+Elevator@{passenger\+Leave\+Elevator}}
+\index{passenger\+Leave\+Elevator@{passenger\+Leave\+Elevator}!cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message@{cn\+::leonwong\+::\+Elevator\+Simulator\+::\+Model\+::\+Message}}
+\subsubsection{\texorpdfstring{passenger\+Leave\+Elevator}{passengerLeaveElevator}}
+{\footnotesize\ttfamily final int cn.\+leonwong.\+Elevator\+Simulator.\+Model.\+Message.\+passenger\+Leave\+Elevator = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+used to indicate this message is describing a passenger leaving an elevator 
+
+
+
+Definition at line 8 of file Message.\+java.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/cn/leonwong/\+Elevator\+Simulator/\+Model/Message.\+java\end{DoxyCompactItemize}
+src/cn/leonwong/\+Elevator\+Simulator/\+Model/\hyperlink{_message_8java}{Message.\+java}\end{DoxyCompactItemize}

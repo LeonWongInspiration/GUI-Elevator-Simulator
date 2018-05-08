@@ -30,9 +30,9 @@
   <td id="projectlogo"><img alt="Logo" src="ElevatorIcon_60_60.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Elevator Simulator
-   &#160;<span id="projectnumber">1.0.0.0</span>
+   &#160;<span id="projectnumber">1.0.0.1</span>
    </div>
-   <div id="projectbrief">A GUI elevator simulator</div>
+   <div id="projectbrief">A simulator which can simulate a building with customized parameters</div>
   </td>
  </tr>
  </tbody>
@@ -94,11 +94,15 @@ $(document).ready(function(){initNavTree('classcn_1_1leonwong_1_1_elevator_simul
 <div class="dynheader">
 Inheritance diagram for cn.leonwong.ElevatorSimulator.Model.Elevator:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.png" usemap="#cn.leonwong.ElevatorSimulator.Model.Elevator_map" alt=""/>
-  <map id="cn.leonwong.ElevatorSimulator.Model.Elevator_map" name="cn.leonwong.ElevatorSimulator.Model.Elevator_map">
-</map>
- </div></div>
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator__inherit__graph.png" border="0" usemap="#cn_8leonwong_8_elevator_simulator_8_model_8_elevator_inherit__map" alt="Inheritance graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for cn.leonwong.ElevatorSimulator.Model.Elevator:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator__coll__graph.png" border="0" usemap="#cn_8leonwong_8_elevator_simulator_8_model_8_elevator_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -111,8 +115,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a45bf0b0add86d6c9f4624aa91804d3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9cb9d7e34873bc531ec71aa4ed3deae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#af9cb9d7e34873bc531ec71aa4ed3deae">run</a> ()</td></tr>
 <tr class="separator:af9cb9d7e34873bc531ec71aa4ed3deae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40f92b8d5f76462a4894e4b4bd670458"><td class="memItemLeft" align="right" valign="top"><a id="a40f92b8d5f76462a4894e4b4bd670458"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
+<tr class="memitem:a40f92b8d5f76462a4894e4b4bd670458"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#a40f92b8d5f76462a4894e4b4bd670458">toString</a> ()</td></tr>
 <tr class="separator:a40f92b8d5f76462a4894e4b4bd670458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cdebccdd3505647fe57df5ea4315c1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#a8cdebccdd3505647fe57df5ea4315c1a">Elevator</a> (int name, int max, int maxPass, Vector&lt; Vector&lt; <a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_passenger.html">Passenger</a> &gt; &gt; levs, Vector&lt; <a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_message.html">Message</a> &gt; mess, ReentrantLock l)</td></tr>
 <tr class="separator:a8cdebccdd3505647fe57df5ea4315c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,17 +148,17 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:af9cc2a12533172485e7539f3690b2af9"><td class="memItemLeft" align="right" valign="top"><a id="af9cc2a12533172485e7539f3690b2af9"></a>
-static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#af9cc2a12533172485e7539f3690b2af9">FLOOR_INTERVAL</a> = 500</td></tr>
-<tr class="memdesc:af9cc2a12533172485e7539f3690b2af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">time interval for going to another floor <br /></td></tr>
+<tr class="memitem:af9cc2a12533172485e7539f3690b2af9"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#af9cc2a12533172485e7539f3690b2af9">FLOOR_INTERVAL</a> = 500</td></tr>
+<tr class="memdesc:af9cc2a12533172485e7539f3690b2af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">time interval for going to another floor  <a href="#af9cc2a12533172485e7539f3690b2af9">More...</a><br /></td></tr>
 <tr class="separator:af9cc2a12533172485e7539f3690b2af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac80145be36386f30ed5b40518706fdc6"><td class="memItemLeft" align="right" valign="top"><a id="ac80145be36386f30ed5b40518706fdc6"></a>
-static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#ac80145be36386f30ed5b40518706fdc6">PASS_INTERVAL</a> = 200</td></tr>
-<tr class="memdesc:ac80145be36386f30ed5b40518706fdc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">time interval for a passenger entering/leaving <br /></td></tr>
+<tr class="memitem:ac80145be36386f30ed5b40518706fdc6"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#ac80145be36386f30ed5b40518706fdc6">PASS_INTERVAL</a> = 200</td></tr>
+<tr class="memdesc:ac80145be36386f30ed5b40518706fdc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">time interval for a passenger entering/leaving  <a href="#ac80145be36386f30ed5b40518706fdc6">More...</a><br /></td></tr>
 <tr class="separator:ac80145be36386f30ed5b40518706fdc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html">Elevator</a> Thread </p><dl class="section author"><dt>Author</dt><dd>1652795 Leon Wong </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00012">12</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8cdebccdd3505647fe57df5ea4315c1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cdebccdd3505647fe57df5ea4315c1a">&#9670;&nbsp;</a></span>Elevator()</h2>
@@ -218,6 +221,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00143">143</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8cdebccdd3505647fe57df5ea4315c1a_cgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8cdebccdd3505647fe57df5ea4315c1a_cgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -243,6 +254,8 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00240">240</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+
 </div>
 </div>
 <a id="aca1fa93441f3463aece03f01591efa61"></a>
@@ -260,6 +273,8 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>getter for a list of destinations of this elevator in a String </p><dl class="section return"><dt>Returns</dt><dd>the String of list of destinations </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00357">357</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
 
 </div>
 </div>
@@ -279,6 +294,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 <p>getter for the destination list's size </p><dl class="section return"><dt>Returns</dt><dd>this size of this destination list </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00365">365</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8e71679aa5ed47ac62be7d4193f81055_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a8e71679aa5ed47ac62be7d4193f81055_icgraph" alt=""/></div>
+<!-- MAP 3 -->
+</div>
+
 </div>
 </div>
 <a id="a0a386b72bfc7edf9a64dcc342dd27f51"></a>
@@ -296,6 +319,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>getter for the current direction of this elevator </p><dl class="section return"><dt>Returns</dt><dd>the current direction of this elevator </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00285">285</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a0a386b72bfc7edf9a64dcc342dd27f51_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a0a386b72bfc7edf9a64dcc342dd27f51_icgraph" alt=""/></div>
+<!-- MAP 4 -->
+</div>
 
 </div>
 </div>
@@ -315,6 +346,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 <p>getter for the current level this elevator is at </p><dl class="section return"><dt>Returns</dt><dd>the current level this elevator is at </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00248">248</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a393eaa2daf4a00730685de6efb3893d5_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a393eaa2daf4a00730685de6efb3893d5_icgraph" alt=""/></div>
+<!-- MAP 5 -->
+</div>
+
 </div>
 </div>
 <a id="acc5b1cdd5cefc853a1cd33e6e986b3a0"></a>
@@ -332,6 +371,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>getter for the biggest level this elevator is heading for </p><dl class="section return"><dt>Returns</dt><dd>the biggest number of level in destination list </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00293">293</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acc5b1cdd5cefc853a1cd33e6e986b3a0_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acc5b1cdd5cefc853a1cd33e6e986b3a0_icgraph" alt=""/></div>
+<!-- MAP 6 -->
+</div>
 
 </div>
 </div>
@@ -351,6 +398,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 <p>getter for the lowest level this elevator is heading for </p><dl class="section return"><dt>Returns</dt><dd>the smallest number of level in destination list </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00308">308</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a9aeca7de346d6a46aea0692a60e57681_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a9aeca7de346d6a46aea0692a60e57681_icgraph" alt=""/></div>
+<!-- MAP 7 -->
+</div>
+
 </div>
 </div>
 <a id="acd5f3b902008c64175d9b5c035e8d77f"></a>
@@ -368,6 +423,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>getter for the numbers of passengers in this elevator </p><dl class="section return"><dt>Returns</dt><dd>the number of passengers in this elevator </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00323">323</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acd5f3b902008c64175d9b5c035e8d77f_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_acd5f3b902008c64175d9b5c035e8d77f_icgraph" alt=""/></div>
+<!-- MAP 8 -->
+</div>
 
 </div>
 </div>
@@ -387,6 +450,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 <p>decide whether this elevator is empty </p><dl class="section return"><dt>Returns</dt><dd>true if this elevator is empty, false otherwise </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00224">224</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a524eaa48c98d600d587c9e81f47e477b_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a524eaa48c98d600d587c9e81f47e477b_icgraph" alt=""/></div>
+<!-- MAP 9 -->
+</div>
+
 </div>
 </div>
 <a id="a6abc5ffe66c8be2d11493fb9d9a2022f"></a>
@@ -404,6 +475,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>decide whether this elevator is full </p><dl class="section return"><dt>Returns</dt><dd>true if this elevator is full, false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00216">216</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a6abc5ffe66c8be2d11493fb9d9a2022f_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a6abc5ffe66c8be2d11493fb9d9a2022f_icgraph" alt=""/></div>
+<!-- MAP 10 -->
+</div>
 
 </div>
 </div>
@@ -423,6 +502,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 <p>decide whether this elevator is idle </p><dl class="section return"><dt>Returns</dt><dd>true if this elevator is idle, false otherwise </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00232">232</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_afef928208c5445a18af5d567ce9a4467_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_afef928208c5445a18af5d567ce9a4467_icgraph" alt=""/></div>
+<!-- MAP 11 -->
+</div>
+
 </div>
 </div>
 <a id="af9cb9d7e34873bc531ec71aa4ed3deae"></a>
@@ -440,6 +527,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>Run function </p>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00068">68</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_af9cb9d7e34873bc531ec71aa4ed3deae_cgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_af9cb9d7e34873bc531ec71aa4ed3deae_cgraph" alt=""/></div>
+<!-- MAP 12 -->
+</div>
 
 </div>
 </div>
@@ -465,6 +560,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00339">339</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_aadee7a0c9b8e13427d46a9f907dcee94_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_aadee7a0c9b8e13427d46a9f907dcee94_icgraph" alt=""/></div>
+<!-- MAP 13 -->
+</div>
+
 </div>
 </div>
 <a id="a45bf0b0add86d6c9f4624aa91804d3c9"></a>
@@ -482,6 +585,14 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
       </table>
 </div><div class="memdoc">
 <p>Start this Thread </p>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00056">56</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a45bf0b0add86d6c9f4624aa91804d3c9_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a45bf0b0add86d6c9f4624aa91804d3c9_icgraph" alt=""/></div>
+<!-- MAP 14 -->
+</div>
 
 </div>
 </div>
@@ -501,17 +612,97 @@ static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 <p>used to stop this thread </p>
 
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00349">349</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a838e6a91c1e6d1ed2786efc462c48151_icgraph.png" border="0" usemap="#classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator_a838e6a91c1e6d1ed2786efc462c48151_icgraph" alt=""/></div>
+<!-- MAP 15 -->
+</div>
+
+</div>
+</div>
+<a id="a40f92b8d5f76462a4894e4b4bd670458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f92b8d5f76462a4894e4b4bd670458">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String cn.leonwong.ElevatorSimulator.Model.Elevator.toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00130">130</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af9cc2a12533172485e7539f3690b2af9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9cc2a12533172485e7539f3690b2af9">&#9670;&nbsp;</a></span>FLOOR_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int cn.leonwong.ElevatorSimulator.Model.Elevator.FLOOR_INTERVAL = 500</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>time interval for going to another floor </p>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00015">15</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+
+</div>
+</div>
+<a id="ac80145be36386f30ed5b40518706fdc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80145be36386f30ed5b40518706fdc6">&#9670;&nbsp;</a></span>PASS_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int cn.leonwong.ElevatorSimulator.Model.Elevator.PASS_INTERVAL = 200</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>time interval for a passenger entering/leaving </p>
+
+<p class="definition">Definition at line <a class="el" href="_elevator_8java_source.html#l00017">17</a> of file <a class="el" href="_elevator_8java_source.html">Elevator.java</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/cn/leonwong/ElevatorSimulator/Model/Elevator.java</li>
+<li>src/cn/leonwong/ElevatorSimulator/Model/<a class="el" href="_elevator_8java_source.html">Elevator.java</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>cn</b></li><li class="navelem"><b>leonwong</b></li><li class="navelem"><b>ElevatorSimulator</b></li><li class="navelem"><b>Model</b></li><li class="navelem"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html">Elevator</a></li>
+    <li class="navelem"><a class="el" href="namespacecn.html">cn</a></li><li class="navelem"><a class="el" href="namespacecn_1_1leonwong.html">leonwong</a></li><li class="navelem"><a class="el" href="namespacecn_1_1leonwong_1_1_elevator_simulator.html">ElevatorSimulator</a></li><li class="navelem"><a class="el" href="namespacecn_1_1leonwong_1_1_elevator_simulator_1_1_model.html">Model</a></li><li class="navelem"><a class="el" href="classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html">Elevator</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

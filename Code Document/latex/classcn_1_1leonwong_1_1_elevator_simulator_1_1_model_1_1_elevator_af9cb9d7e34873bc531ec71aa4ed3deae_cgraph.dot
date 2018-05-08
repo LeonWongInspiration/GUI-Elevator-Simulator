@@ -1,0 +1,9 @@
+digraph "cn.leonwong.ElevatorSimulator.Model.Elevator.run"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node37 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.run",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node37 -> Node38 [color="midnightblue",fontsize="10",style="solid"];
+  Node38 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.isIdle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#afef928208c5445a18af5d567ce9a4467"];
+}

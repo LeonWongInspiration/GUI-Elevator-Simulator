@@ -1,0 +1,15 @@
+digraph "cn.leonwong.ElevatorSimulator.Model.Elevator.stopThread"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node47 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.stopThread",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node47 -> Node48 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="cn.leonwong.ElevatorSimulator.\lController.stopThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#a9c5e5f2cccaf70952c8764d939defb32"];
+  Node48 -> Node49 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="cn.leonwong.ElevatorSimulator.\lView.stopThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_view.html#a0cea78020cab972bf8370aff8bed9eea"];
+  Node48 -> Node50 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="cn.leonwong.ElevatorSimulator.\lView.moveElevator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_view.html#af6d3d9a99e60ae5cdcb26d16fe8f19b5"];
+  Node50 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="cn.leonwong.ElevatorSimulator.\lController.run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#ae83c14542e0003ed7d165e61d886732a"];
+}

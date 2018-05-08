@@ -1,0 +1,29 @@
+digraph "cn.leonwong.ElevatorSimulator.Controller.run"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node47 [label="cn.leonwong.ElevatorSimulator.\lController.run",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node47 -> Node48 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node48 [label="cn.leonwong.ElevatorSimulator.\lView.moveElevator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_view.html#af6d3d9a99e60ae5cdcb26d16fe8f19b5"];
+  Node48 -> Node49 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node49 [label="cn.leonwong.ElevatorSimulator.\lController.getLevels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#a027b4222bf633f8e83ad3c90654d487c"];
+  Node49 -> Node50 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node50 [label="cn.leonwong.ElevatorSimulator.\lModel.Building.getLevels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_building.html#a140ef7ab3469607bd537c51b3da5b833"];
+  Node48 -> Node51 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="cn.leonwong.ElevatorSimulator.\lController.stopThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#a9c5e5f2cccaf70952c8764d939defb32"];
+  Node51 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="cn.leonwong.ElevatorSimulator.\lModel.Elevator.stopThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_model_1_1_elevator.html#a838e6a91c1e6d1ed2786efc462c48151"];
+  Node48 -> Node53 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node53 [label="cn.leonwong.ElevatorSimulator.\lController.setView",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#a38c35c44135e435c2dc662685f119658"];
+  Node48 -> Node54 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node54 [label="cn.leonwong.ElevatorSimulator.\lController.createBuilding",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#a8e058ddefc613bf94959d748a8e48658"];
+  Node48 -> Node55 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node55 [label="cn.leonwong.ElevatorSimulator.\lController.start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#a65d8fff6b66fa289ce724caf6df177ab"];
+  Node48 -> Node56 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node56 [label="cn.leonwong.ElevatorSimulator.\lController.isBuildingCreated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#ad3d0574895e62099276f6f2429736a64"];
+  Node48 -> Node57 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node57 [label="cn.leonwong.ElevatorSimulator.\lController.addPassenger",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#afc1bf557c2d5232eceb9e301f69bf9fe"];
+  Node48 -> Node58 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node58 [label="cn.leonwong.ElevatorSimulator.\lController.setStrategy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcn_1_1leonwong_1_1_elevator_simulator_1_1_controller.html#a2ec4f7e1c062b049e7ed25fe6d324c56"];
+}
